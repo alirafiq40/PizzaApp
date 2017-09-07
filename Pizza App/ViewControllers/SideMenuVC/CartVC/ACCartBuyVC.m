@@ -15,7 +15,6 @@
 #import "ActionSheetStringPicker.h"
 #import "ActionSheetDatePicker.h"
 #import "ActionSheetDistancePicker.h"
-#import "BBAddEditAddressViewController.h"
 #import "ACCartTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "RESideMenu.h"
@@ -74,26 +73,26 @@
     }
     
     ACAPIManager * manager = [ACAPIManager new];
-    Address * addressObj = [addressArray objectAtIndex:selectedAddressIndex];
-    [manager postOrder:[ACCartSingeltonManager sharedManager].dictCartProducts totalPrice:[NSString stringWithFormat:@"%f",totalBill] address:[addressObj getFullAddress] phone:addressObj.phoneNo completionBlock:^(NSString *message, NSMutableDictionary *resDict, BOOL isSuccessfull) {
-        
-        if(isSuccessfull) {
-            
-        [ACCartSingeltonManager sharedManager].dictCartProducts = [[NSMutableDictionary alloc] init];
-            
-        ACOrderHistoryVC * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ACOrderHistoryVC"];
-        [self.navigationController pushViewController:vc animated:YES];
-            
-            [FPUtilityFunctions showAlertView:@"" message:@"Order Posted" alertType:AlertSuccess];
-        }
-        else {
-            ACOrderHistoryVC * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ACOrderHistoryVC"];
-            [self.navigationController pushViewController:vc animated:YES];
-            
-            [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
-        }
-        
-    }];
+//    Address * addressObj = [addressArray objectAtIndex:selectedAddressIndex];
+//    [manager postOrder:[ACCartSingeltonManager sharedManager].dictCartProducts totalPrice:[NSString stringWithFormat:@"%f",totalBill] address:[addressObj getFullAddress] phone:addressObj.phoneNo completionBlock:^(NSString *message, NSMutableDictionary *resDict, BOOL isSuccessfull) {
+//        
+//        if(isSuccessfull) {
+//            
+//        [ACCartSingeltonManager sharedManager].dictCartProducts = [[NSMutableDictionary alloc] init];
+//            
+//        ACOrderHistoryVC * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ACOrderHistoryVC"];
+//        [self.navigationController pushViewController:vc animated:YES];
+//            
+//            [FPUtilityFunctions showAlertView:@"" message:@"Order Posted" alertType:AlertSuccess];
+//        }
+//        else {
+//            ACOrderHistoryVC * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ACOrderHistoryVC"];
+//            [self.navigationController pushViewController:vc animated:YES];
+//            
+//            [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
+//        }
+//        
+//    }];
     
     
 }
@@ -270,10 +269,10 @@
         if (addressArray.count>0)
         {
             selectedAddressIndex = 0;
-            Address * addressObj = [addressArray objectAtIndex:0];
-            [self.addressButton setTitle:[[addressArray objectAtIndex:0]adressType] forState:UIControlStateNormal];
-            [self.addressButton setTitle:[[addressArray objectAtIndex:0]adressType] forState:UIControlStateSelected];
-            [self.lblMyAddress setText:[NSString stringWithFormat:@"%@, Cell: %@",[addressObj getFullAddress],addressObj.phoneNo]];
+//            Address * addressObj = [addressArray objectAtIndex:0];
+//            [self.addressButton setTitle:[[addressArray objectAtIndex:0]adressType] forState:UIControlStateNormal];
+//            [self.addressButton setTitle:[[addressArray objectAtIndex:0]adressType] forState:UIControlStateSelected];
+//            [self.lblMyAddress setText:[NSString stringWithFormat:@"%@, Cell: %@",[addressObj getFullAddress],addressObj.phoneNo]];
 //Rafay     [self.lblPhoneNo setText:addressObj.phoneNo];
         }
         else
@@ -304,10 +303,10 @@
   
     addressArray =  [[[NSUserDefaults standardUserDefaults] addressArray] mutableCopy];//[[Address all:nil] mutableCopy];
     
-    for (Address *tempAddressObj in addressArray)
-    {
-        [temp addObject:tempAddressObj.adressType];
-    }
+//    for (Address *tempAddressObj in addressArray)
+//    {
+//        [temp addObject:tempAddressObj.adressType];
+//    }
     
     [temp addObject:@"Add Other"];
     
@@ -324,17 +323,17 @@
             
             if([selectedValue isEqualToString:@"Add Other"])
             {
-                BBAddEditAddressViewController *myAddEditAddressViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BBAddEditAddressViewController"];
-                [self.navigationController pushViewController:myAddEditAddressViewController animated:YES];
+//                BBAddEditAddressViewController *myAddEditAddressViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BBAddEditAddressViewController"];
+//                [self.navigationController pushViewController:myAddEditAddressViewController animated:YES];
             }
             else
             {
              
                 selectedAddressIndex = selectedIndex;
-                Address * addressObj = [addressArray objectAtIndex:selectedIndex];
-                [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateNormal];
-                [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateSelected];
-                [self.lblMyAddress setText:[NSString stringWithFormat:@"%@, Cell: %@",[addressObj getFullAddress],addressObj.phoneNo]];
+//                Address * addressObj = [addressArray objectAtIndex:selectedIndex];
+//                [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateNormal];
+//                [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateSelected];
+//                [self.lblMyAddress setText:[NSString stringWithFormat:@"%@, Cell: %@",[addressObj getFullAddress],addressObj.phoneNo]];
                 //rafay        [self.lblPhoneNo setText:addressObj.phoneNo];
             }
             
@@ -358,16 +357,16 @@
 {
     if([selectedString isEqualToString:@"Add Other"])
     {
-        BBAddEditAddressViewController *myAddEditAddressViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BBAddEditAddressViewController"];
-        [self.navigationController pushViewController:myAddEditAddressViewController animated:YES];
+//        BBAddEditAddressViewController *myAddEditAddressViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BBAddEditAddressViewController"];
+//        [self.navigationController pushViewController:myAddEditAddressViewController animated:YES];
     }
     else
     {
         selectedAddressIndex = indexPath;
-        Address * addressObj = [addressArray objectAtIndex:indexPath];
-        [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateNormal];
-        [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateSelected];
-        [self.lblMyAddress setText:[NSString stringWithFormat:@"%@, Cell: %@",[addressObj getFullAddress],addressObj.phoneNo]];
+//        Address * addressObj = [addressArray objectAtIndex:indexPath];
+//        [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateNormal];
+//        [self.addressButton setTitle:[addressObj adressType] forState:UIControlStateSelected];
+//        [self.lblMyAddress setText:[NSString stringWithFormat:@"%@, Cell: %@",[addressObj getFullAddress],addressObj.phoneNo]];
 //rafay [self.lblPhoneNo setText:addressObj.phoneNo];
     }
     
