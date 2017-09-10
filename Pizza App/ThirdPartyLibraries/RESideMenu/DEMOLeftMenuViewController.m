@@ -18,7 +18,6 @@
     BOOL updateProfilePic;
     int selectedSegmentIndex;
     
-    NSMutableArray * arrCategoriesList;
     NSArray *arrMenu;
     NSArray *arrImages;
 
@@ -36,10 +35,9 @@
     [super viewDidLoad];
     
     selectedSegmentIndex = 100;
-    arrCategoriesList = [NSMutableArray new];
     
-    arrMenu = [NSArray arrayWithObjects:@"Home", @"Menu", @"Order History", @"Special Deals", @"Contact Us", @"Logout", @"Sign In", nil];
-    arrImages = [NSArray arrayWithObjects:@"Home", @"Menu", @"Order History", @"Special Deals", @"Contact Us", @"Logout", @"Sign In", nil];
+    arrMenu = [NSArray arrayWithObjects:@"Menu", @"Order History", @"Special Deals", @"Reviews",@"Contact Us", @"Logout", @"Sign In", nil];
+    arrImages = [NSArray arrayWithObjects:@"menu", @"order", @"special-deal-icon", @"", @"contact", @"logout-icon", @"sign-in-icon", nil];
 
     
     if(IS_IPHONE4) {
@@ -50,17 +48,6 @@
                                              selector:@selector(reloadTable:)
                                                  name:K_Table_Reload
                                                object:nil];
-    
-    ACAPIManager * manager = [ACAPIManager new];
-    
-    [manager allCategoriesList:^(NSString *message, NSMutableArray * resArray, BOOL isSuccessfull) {
-        if(isSuccessfull) {
-            arrCategoriesList = resArray;
-        }
-        else {
-            [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
-        }
-    }];
 }
 
 -(void) btnProfileTapped:(UIButton*)sender
@@ -96,62 +83,29 @@
     selectedSegmentIndex = (int)indexPath.row;
     [self.tableView reloadData];
     
-    if(indexPath.row == 0) {
-        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACLoginVC"]]
-                                                     animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
-    }
-    else if (indexPath.row == arrCategoriesList.count) {
-        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDeliveryInfoVC"]]
-                                                     animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
-    }
-    else {
-        
-        NSDictionary * dictCategory = [arrCategoriesList objectAtIndex:indexPath.row-1];
-        
-        [[NSUserDefaults standardUserDefaults] setCategoryID:[NSString stringWithFormat:@"%@",[dictCategory valueForKey:@"id"]]];
-        [[NSUserDefaults standardUserDefaults] setCategoryTitle:[NSString stringWithFormat:@"%@",[dictCategory valueForKey:@"name"]]];
-        
-        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDailyLivingVC"]]
-                                                     animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
-
-    }
-    
-    /*
     switch (indexPath.row) {
         case 0:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACLoginVC"]]
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACHomeVC"]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             
             break;
         case 1:
             
-            [[NSUserDefaults standardUserDefaults] setCategoryID:@"11"];
-            [[NSUserDefaults standardUserDefaults] setCategoryTitle:@"Health Care & Medical"];
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDailyLivingVC"]]
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACOrderHistoryVC"]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
         case 2:
             
-            [[NSUserDefaults standardUserDefaults] setCategoryID:@"12"];
-            [[NSUserDefaults standardUserDefaults] setCategoryTitle:@"Consumables"];
-
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDailyLivingVC"]]
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACHomeVC"]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 3:
             
-            [[NSUserDefaults standardUserDefaults] setCategoryID:@"13"];
-            [[NSUserDefaults standardUserDefaults] setCategoryTitle:@"Cleaning Equipment"];
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDailyLivingVC"]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"FeedbackViewController"]] animated:YES];
             
             [self.sideMenuViewController hideMenuViewController];
             break;
@@ -159,10 +113,7 @@
             
         case 4:
             
-            [[NSUserDefaults standardUserDefaults] setCategoryID:@"14"];
-            [[NSUserDefaults standardUserDefaults] setCategoryTitle:@"Shop by brand"];
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDailyLivingVC"]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACContactUsVC"]] animated:YES];
             
             [self.sideMenuViewController hideMenuViewController];
             
@@ -170,10 +121,7 @@
             
         case 5:
             
-            [[NSUserDefaults standardUserDefaults] setCategoryID:@"23"];
-            [[NSUserDefaults standardUserDefaults] setCategoryTitle:@"Jantorial Supplies"];
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDailyLivingVC"]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACLoginVC"]] animated:YES];
             
             [self.sideMenuViewController hideMenuViewController];
             
@@ -181,43 +129,15 @@
             
         case 6:
         {
-            [[NSUserDefaults standardUserDefaults] setCategoryID:@"24"];
-            [[NSUserDefaults standardUserDefaults] setCategoryTitle:@"Furniture $ Equipment"];
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDailyLivingVC"]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACLoginVC"]] animated:YES];
             
             [self.sideMenuViewController hideMenuViewController];
             
         }
-            break;
-        case 7:
-        {
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACDeliveryInfoVC"]] animated:YES];
-            
-            [self.sideMenuViewController hideMenuViewController];
-        }
-            break;
-        case 8:
-        {
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACReturnPolicyVC"]] animated:YES];
-            
-            [self.sideMenuViewController hideMenuViewController];
-        }
-            break;
-        case 9:
-        {
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACTocVC"]] animated:YES];
-            
-            [self.sideMenuViewController hideMenuViewController];
-        }
-            break;
-            
             
         default:
             break;
     }
-    */
 }
 
 #pragma mark -

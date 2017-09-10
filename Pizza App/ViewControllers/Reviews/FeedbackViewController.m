@@ -1,22 +1,24 @@
 //
-//  ACContactUsVC.m
-//  AimsCareStore
+//  FeedbackViewController.m
+//  Pizza App
 //
-//  Created by Adeel Ishaq on 12/23/16.
-//  Copyright © 2016 finja. All rights reserved.
+//  Created by Adeel Ishaq on 9/9/17.
+//  Copyright © 2017 Adeel Ishaq. All rights reserved.
 //
 
-#import "ACContactUsVC.h"
+#import "FeedbackViewController.h"
 
-@interface ACContactUsVC ()
+@interface FeedbackViewController ()
 
 @end
 
-@implementation ACContactUsVC
+@implementation FeedbackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = @"Reviews";
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self
@@ -33,7 +35,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [self.navigationController.navigationBar setTranslucent:NO];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.barTintColor = KAppTheme_COLOR;
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor blackColor],  NSFontAttributeName: ProximaNova_LIGHT(15)}];
@@ -48,7 +50,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C24DF1BB1F63D1740075AB56 /* UIImage+EZAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C24DF1BA1F63D1740075AB56 /* UIImage+EZAdditions.m */; };
+		C24DF1BE1F63F5380075AB56 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24DF1BD1F63F5380075AB56 /* FeedbackViewController.m */; };
 		C2ABE1421F58DE9D00614189 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ABE1411F58DE9D00614189 /* MenuTableViewCell.m */; };
 		C2ABE1441F58E0D700614189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2ABE1431F58E0D700614189 /* Assets.xcassets */; };
 		C2B60A241F5742CD00379524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A231F5742CD00379524 /* main.m */; };
@@ -53,22 +55,23 @@
 		C2B60AE01F57433800379524 /* ACSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A9A1F57433800379524 /* ACSignUpVC.m */; };
 		C2B60AE11F57433800379524 /* ACCartBuyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A9D1F57433800379524 /* ACCartBuyVC.m */; };
 		C2B60AE21F57433800379524 /* ACCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A9F1F57433800379524 /* ACCartVC.m */; };
-		C2B60AE31F57433800379524 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AA11F57433800379524 /* Address.m */; };
-		C2B60AE41F57433800379524 /* BBAddEditAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AA31F57433800379524 /* BBAddEditAddressViewController.m */; };
-		C2B60AE51F57433800379524 /* BBAddressTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AA51F57433800379524 /* BBAddressTypeViewController.m */; };
-		C2B60AE61F57433800379524 /* BBCountryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AA71F57433800379524 /* BBCountryListViewController.m */; };
 		C2B60AE71F57433800379524 /* ACDailyLivingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AAA1F57433800379524 /* ACDailyLivingVC.m */; };
-		C2B60AE81F57433800379524 /* ACDeliveryInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AAD1F57433800379524 /* ACDeliveryInfoVC.m */; };
 		C2B60AE91F57433900379524 /* ACHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AB01F57433800379524 /* ACHomeVC.m */; };
 		C2B60AEA1F57433900379524 /* ACOrderHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AB41F57433800379524 /* ACOrderHistoryVC.m */; };
 		C2B60AEB1F57433900379524 /* ACReturnPolicyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AB71F57433800379524 /* ACReturnPolicyVC.m */; };
 		C2B60AEC1F57433900379524 /* ACTocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60ABA1F57433800379524 /* ACTocVC.m */; };
+		C2BB925B1F63CC110028F74C /* EZRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB925A1F63CC110028F74C /* EZRatingView.m */; };
+		C2BB925F1F63CC6B0028F74C /* ReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB925E1F63CC6B0028F74C /* ReviewsViewController.m */; };
 		F324AB84435987C45A21BDAD /* Pods_Pizza_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9124B42F8A30544AF956A85A /* Pods_Pizza_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		358F979DA5E7FEA464742C56 /* Pods-Pizza App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza App/Pods-Pizza App.debug.xcconfig"; sourceTree = "<group>"; };
 		9124B42F8A30544AF956A85A /* Pods_Pizza_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pizza_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C24DF1B91F63D1740075AB56 /* UIImage+EZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EZAdditions.h"; sourceTree = "<group>"; };
+		C24DF1BA1F63D1740075AB56 /* UIImage+EZAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EZAdditions.m"; sourceTree = "<group>"; };
+		C24DF1BC1F63F5380075AB56 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		C24DF1BD1F63F5380075AB56 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		C2ABE13F1F58CF2C00614189 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C2ABE1401F58DE9D00614189 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		C2ABE1411F58DE9D00614189 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
@@ -154,18 +157,8 @@
 		C2B60A9D1F57433800379524 /* ACCartBuyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCartBuyVC.m; sourceTree = "<group>"; };
 		C2B60A9E1F57433800379524 /* ACCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACCartVC.h; sourceTree = "<group>"; };
 		C2B60A9F1F57433800379524 /* ACCartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCartVC.m; sourceTree = "<group>"; };
-		C2B60AA01F57433800379524 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
-		C2B60AA11F57433800379524 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
-		C2B60AA21F57433800379524 /* BBAddEditAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAddEditAddressViewController.h; sourceTree = "<group>"; };
-		C2B60AA31F57433800379524 /* BBAddEditAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAddEditAddressViewController.m; sourceTree = "<group>"; };
-		C2B60AA41F57433800379524 /* BBAddressTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAddressTypeViewController.h; sourceTree = "<group>"; };
-		C2B60AA51F57433800379524 /* BBAddressTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAddressTypeViewController.m; sourceTree = "<group>"; };
-		C2B60AA61F57433800379524 /* BBCountryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCountryListViewController.h; sourceTree = "<group>"; };
-		C2B60AA71F57433800379524 /* BBCountryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCountryListViewController.m; sourceTree = "<group>"; };
 		C2B60AA91F57433800379524 /* ACDailyLivingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDailyLivingVC.h; sourceTree = "<group>"; };
 		C2B60AAA1F57433800379524 /* ACDailyLivingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDailyLivingVC.m; sourceTree = "<group>"; };
-		C2B60AAC1F57433800379524 /* ACDeliveryInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDeliveryInfoVC.h; sourceTree = "<group>"; };
-		C2B60AAD1F57433800379524 /* ACDeliveryInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDeliveryInfoVC.m; sourceTree = "<group>"; };
 		C2B60AAF1F57433800379524 /* ACHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACHomeVC.h; sourceTree = "<group>"; };
 		C2B60AB01F57433800379524 /* ACHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACHomeVC.m; sourceTree = "<group>"; };
 		C2B60AB31F57433800379524 /* ACOrderHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACOrderHistoryVC.h; sourceTree = "<group>"; };
@@ -174,6 +167,10 @@
 		C2B60AB71F57433800379524 /* ACReturnPolicyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACReturnPolicyVC.m; sourceTree = "<group>"; };
 		C2B60AB91F57433800379524 /* ACTocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTocVC.h; sourceTree = "<group>"; };
 		C2B60ABA1F57433800379524 /* ACTocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACTocVC.m; sourceTree = "<group>"; };
+		C2BB92591F63CC110028F74C /* EZRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRatingView.h; sourceTree = "<group>"; };
+		C2BB925A1F63CC110028F74C /* EZRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRatingView.m; sourceTree = "<group>"; };
+		C2BB925D1F63CC6B0028F74C /* ReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewsViewController.h; sourceTree = "<group>"; };
+		C2BB925E1F63CC6B0028F74C /* ReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsViewController.m; sourceTree = "<group>"; };
 		DECD2D86D920A6BAEC75021F /* Pods-Pizza App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza App/Pods-Pizza App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -349,6 +346,7 @@
 		C2B60A631F57433800379524 /* ThirdPartyLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				C2BB92581F63CC110028F74C /* EZRatingView */,
 				C2B60A641F57433800379524 /* ActionSheet */,
 				C2B60A781F57433800379524 /* RESideMenu */,
 			);
@@ -412,6 +410,7 @@
 		C2B60A861F57433800379524 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C2BB925C1F63CC590028F74C /* Reviews */,
 				C2B60A871F57433800379524 /* ContactUsVC */,
 				C2B60A8A1F57433800379524 /* ProductCollectionVC */,
 				C2B60A8D1F57433800379524 /* ProductDetailVC */,
@@ -462,13 +461,11 @@
 		C2B60A951F57433800379524 /* SideMenuVC */ = {
 			isa = PBXGroup;
 			children = (
+				C2B60AAE1F57433800379524 /* HomeVc */,
+				C2B60AB21F57433800379524 /* OrderHistoryVC */,
 				C2B60A961F57433800379524 /* ACLoginVC */,
 				C2B60A9B1F57433800379524 /* CartVC */,
 				C2B60AA81F57433800379524 /* DailyLivingVC */,
-				C2B60AAB1F57433800379524 /* DeliveryInfoVC */,
-				C2B60AAE1F57433800379524 /* HomeVc */,
-				C2B60AB11F57433800379524 /* MobilityVC */,
-				C2B60AB21F57433800379524 /* OrderHistoryVC */,
 				C2B60AB51F57433800379524 /* ReturnPolicyVC */,
 				C2B60AB81F57433800379524 /* TocVC */,
 			);
@@ -493,14 +490,6 @@
 				C2B60A9D1F57433800379524 /* ACCartBuyVC.m */,
 				C2B60A9E1F57433800379524 /* ACCartVC.h */,
 				C2B60A9F1F57433800379524 /* ACCartVC.m */,
-				C2B60AA01F57433800379524 /* Address.h */,
-				C2B60AA11F57433800379524 /* Address.m */,
-				C2B60AA21F57433800379524 /* BBAddEditAddressViewController.h */,
-				C2B60AA31F57433800379524 /* BBAddEditAddressViewController.m */,
-				C2B60AA41F57433800379524 /* BBAddressTypeViewController.h */,
-				C2B60AA51F57433800379524 /* BBAddressTypeViewController.m */,
-				C2B60AA61F57433800379524 /* BBCountryListViewController.h */,
-				C2B60AA71F57433800379524 /* BBCountryListViewController.m */,
 			);
 			path = CartVC;
 			sourceTree = "<group>";
@@ -514,15 +503,6 @@
 			path = DailyLivingVC;
 			sourceTree = "<group>";
 		};
-		C2B60AAB1F57433800379524 /* DeliveryInfoVC */ = {
-			isa = PBXGroup;
-			children = (
-				C2B60AAC1F57433800379524 /* ACDeliveryInfoVC.h */,
-				C2B60AAD1F57433800379524 /* ACDeliveryInfoVC.m */,
-			);
-			path = DeliveryInfoVC;
-			sourceTree = "<group>";
-		};
 		C2B60AAE1F57433800379524 /* HomeVc */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,13 +510,6 @@
 				C2B60AB01F57433800379524 /* ACHomeVC.m */,
 			);
 			path = HomeVc;
-			sourceTree = "<group>";
-		};
-		C2B60AB11F57433800379524 /* MobilityVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MobilityVC;
 			sourceTree = "<group>";
 		};
 		C2B60AB21F57433800379524 /* OrderHistoryVC */ = {
@@ -564,6 +537,28 @@
 				C2B60ABA1F57433800379524 /* ACTocVC.m */,
 			);
 			path = TocVC;
+			sourceTree = "<group>";
+		};
+		C2BB92581F63CC110028F74C /* EZRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				C24DF1B91F63D1740075AB56 /* UIImage+EZAdditions.h */,
+				C24DF1BA1F63D1740075AB56 /* UIImage+EZAdditions.m */,
+				C2BB92591F63CC110028F74C /* EZRatingView.h */,
+				C2BB925A1F63CC110028F74C /* EZRatingView.m */,
+			);
+			path = EZRatingView;
+			sourceTree = "<group>";
+		};
+		C2BB925C1F63CC590028F74C /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				C2BB925D1F63CC6B0028F74C /* ReviewsViewController.h */,
+				C2BB925E1F63CC6B0028F74C /* ReviewsViewController.m */,
+				C24DF1BC1F63F5380075AB56 /* FeedbackViewController.h */,
+				C24DF1BD1F63F5380075AB56 /* FeedbackViewController.m */,
+			);
+			path = Reviews;
 			sourceTree = "<group>";
 		};
 		E2080676E14228562D1FEE5E /* Pods */ = {
@@ -737,13 +732,16 @@
 				C2ABE1421F58DE9D00614189 /* MenuTableViewCell.m in Sources */,
 				C2B60ADB1F57433800379524 /* ACProductCollectionVC.m in Sources */,
 				C2B60AD51F57433800379524 /* DEMORootViewController.m in Sources */,
+				C24DF1BB1F63D1740075AB56 /* UIImage+EZAdditions.m in Sources */,
 				C2B60ADF1F57433800379524 /* ACLoginVC.m in Sources */,
 				C2B60ACE1F57433800379524 /* ActionSheetDistancePicker.m in Sources */,
 				C2B60ACF1F57433800379524 /* ActionSheetLocalePicker.m in Sources */,
 				C2B60AE01F57433800379524 /* ACSignUpVC.m in Sources */,
 				C2B60AD91F57433800379524 /* FPUtilityFunctions.m in Sources */,
 				C2B60ACD1F57433800379524 /* ActionSheetDatePicker.m in Sources */,
+				C24DF1BE1F63F5380075AB56 /* FeedbackViewController.m in Sources */,
 				C2B60ACC1F57433800379524 /* ActionSheetCustomPicker.m in Sources */,
+				C2BB925F1F63CC6B0028F74C /* ReviewsViewController.m in Sources */,
 				C2B60ADC1F57433800379524 /* ACProductDetailVC.m in Sources */,
 				C2B60A401F57430B00379524 /* ACAPIManager.m in Sources */,
 				C2B60AD21F57433800379524 /* DistancePickerView.m in Sources */,
@@ -751,7 +749,7 @@
 				C2B60AD01F57433800379524 /* ActionSheetPickerCustom.m in Sources */,
 				C2B60AD31F57433800379524 /* SWActionSheet.m in Sources */,
 				C2B60AE21F57433800379524 /* ACCartVC.m in Sources */,
-				C2B60AE51F57433800379524 /* BBAddressTypeViewController.m in Sources */,
+				C2BB925B1F63CC110028F74C /* EZRatingView.m in Sources */,
 				C2B60AE71F57433800379524 /* ACDailyLivingVC.m in Sources */,
 				C2B60ADD1F57433800379524 /* ProfileImagesViewerVC.m in Sources */,
 				C2B60AEB1F57433900379524 /* ACReturnPolicyVC.m in Sources */,
@@ -762,14 +760,10 @@
 				C2B60A411F57430B00379524 /* AppDelegate.m in Sources */,
 				C2B60ABB1F57433800379524 /* ACCartTableViewCell.m in Sources */,
 				C2B60ABD1F57433800379524 /* FMMosaicCellView.m in Sources */,
-				C2B60AE41F57433800379524 /* BBAddEditAddressViewController.m in Sources */,
 				C2B60AEC1F57433900379524 /* ACTocVC.m in Sources */,
 				C2B60AE11F57433800379524 /* ACCartBuyVC.m in Sources */,
-				C2B60AE61F57433800379524 /* BBCountryListViewController.m in Sources */,
-				C2B60AE31F57433800379524 /* Address.m in Sources */,
 				C2B60ACB1F57433800379524 /* AbstractActionSheetPicker.m in Sources */,
 				C2B60AC91F57433800379524 /* ACCartSingeltonManager.m in Sources */,
-				C2B60AE81F57433800379524 /* ACDeliveryInfoVC.m in Sources */,
 				C2B60AE91F57433900379524 /* ACHomeVC.m in Sources */,
 				C2B60AD81F57433800379524 /* UIViewController+RESideMenu.m in Sources */,
 			);

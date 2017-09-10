@@ -57,7 +57,7 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
     
     // Change the tab bar background
 //    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-//    [[UITabBar appearance] setBarTintColor:KAppTheme_COLOR];
+    [[UITabBar appearance] setBarTintColor:KAppTheme_COLOR];
      // [[UITabBar appearance] selectedImageTintColor:[UIImage imageNamed:@"search_active"]];
 //    
 //
@@ -66,15 +66,16 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
 //                                                        } forState:UIControlStateNormal];
 //
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor blackColor] }
                                              forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor blackColor] }
                                              forState:UIControlStateSelected];
     
     
     UITabBarItem *tabBarItem = [tabBarController.tabBar.items objectAtIndex:0];
-    UITabBarItem *tabBarItem1 = [tabBarController.tabBar.items objectAtIndex:1];
-    UITabBarItem *tabBarItem2 = [tabBarController.tabBar.items objectAtIndex:2];
+//    UITabBarItem *tabBarItem1 = [tabBarController.tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem2 = [tabBarController.tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBarController.tabBar.items objectAtIndex:2];
     
 //    UIImage *unselectedImageForTabItem0 = [UIImage imageNamed:@"home"];
 //    UIImage *selectedImageForTabItem0  = [UIImage imageNamed:@"home_active"];
@@ -86,18 +87,22 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
 //    UIImage *selectedImageForTabItem2  = [UIImage imageNamed:@"call_active"];
 //    
     
-    tabBarItem.selectedImage = [[UIImage imageNamed:@"home_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem.image = [[UIImage imageNamed:@"home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem.selectedImage = [[UIImage imageNamed:@"home-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem.image = [[UIImage imageNamed:@"home-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem.title = @"Home";
 
     
-    tabBarItem1.selectedImage = [[UIImage imageNamed:@"search_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem1.image = [[UIImage imageNamed:@"search"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem1.title = @"Seach";
+//    tabBarItem1.selectedImage = [[UIImage imageNamed:@"order-history"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+//    tabBarItem1.image = [[UIImage imageNamed:@"order-history"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+//    tabBarItem1.title = @"Order";
     
-    tabBarItem2.selectedImage = [[UIImage imageNamed:@"call_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem2.image = [[UIImage imageNamed:@"call"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem2.selectedImage = [[UIImage imageNamed:@"contact-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem2.image = [[UIImage imageNamed:@"contact-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem2.title = @"Contact";
+
+    tabBarItem3.selectedImage = [[UIImage imageNamed:@"checkout-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem3.image = [[UIImage imageNamed:@"checkout-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem3.title = @"Checkout";
 
   //  [tabBarItem setImage: [unselectedImageForTabItem0 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
   //  [tabBarItem setSelectedImage: selectedImageForTabItem0];
@@ -109,7 +114,7 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
   //  [tabBarItem2 setSelectedImage: selectedImageForTabItem2];
     
     
-    [[UITabBar appearance] setItemWidth:self.window.frame.size.width/3];
+    [[UITabBar appearance] setItemWidth:self.window.frame.size.width/4];
    [UITabBar appearance].itemPositioning = UITabBarItemPositioningFill;
     
     

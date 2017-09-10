@@ -47,7 +47,7 @@
 #define IMAGE_UNSELECTED_ADDRESS_DROPDOWN [UIImage imageNamed:@"address_dropdown_cell@2x.png"]
 
 //Color
-#define KAppTheme_COLOR [UIColor colorWithRed:13.0/255. green:33.0/255. blue:77.0/255. alpha:1.0]
+#define KAppTheme_COLOR [UIColor colorWithRed:225.0/255. green:226.0/255. blue:227.0/255. alpha:1.0]
 #define KGREY_COLOR [UIColor colorWithRed:130.0/255. green:130.0/255. blue:130.0/255. alpha:1.0]
 #define KRED_COLOR [UIColor colorWithRed:162.0/255. green:0.0/255. blue:40.0/255. alpha:1.0]
 #define KCream_COLOR [UIColor colorWithRed:228.0/255. green:224.0/255. blue:224.0/255. alpha:1.0]

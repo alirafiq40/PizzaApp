@@ -27,8 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
     _collectionVW.delegate = self;
     _collectionVW.dataSource = self;
+    self.title = @"Dashboard";
     
 //    [_collectionVW setFrame:CGRectMake(_collectionVW.frame.origin.x, KSCREEN_HEIGHT-144-(2*((_collectionVW.frame.size.width-40)/3)) , _collectionVW.frame.size.width, (2*((_collectionVW.frame.size.width-40)/3))+60)];
     [self addCartView];
@@ -66,24 +69,24 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    [_collectionVW setFrame:CGRectMake(_collectionVW.frame.origin.x, KSCREEN_HEIGHT-184-(2*((_collectionVW.frame.size.width-40)/3)) , _collectionVW.frame.size.width, (2*((_collectionVW.frame.size.width-40)/3))+80)];
-    
-    [_pageControl setFrame:CGRectMake(_pageControl.frame.origin.x, KSCREEN_HEIGHT-104-_pageControl.frame.size.height , _pageControl.frame.size.width,_pageControl.frame.size.height)];
-
-    [_headerView setFrame:CGRectMake(_headerView.frame.origin.x, 0 , _headerView.frame.size.width,KSCREEN_HEIGHT - _collectionVW.frame.size.height - 144)];
-    
-//    [self.navigationController.navigationBar setTranslucent:NO];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//    self.navigationController.navigationBar.barTintColor = KAppTheme_COLOR;
+       [self.navigationController.navigationBar setTranslucent:NO];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.barTintColor = KAppTheme_COLOR;
 
     
     
 //    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-//    [self.navigationController.navigationBar setTitleTextAttributes:
-//     @{NSForegroundColorAttributeName:[UIColor whiteColor],  NSFontAttributeName: ProximaNova_LIGHT(15)}];
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor blackColor],  NSFontAttributeName: ProximaNova_LIGHT(15)}];
+}
 
+-(void)viewDidAppear:(BOOL)animated {
     
+        [_collectionVW setFrame:CGRectMake(_collectionVW.frame.origin.x, KSCREEN_HEIGHT-184-(2*((_collectionVW.frame.size.width-40)/3)) , _collectionVW.frame.size.width, (2*((_collectionVW.frame.size.width-40)/3))+80)];
+        
+        [_pageControl setFrame:CGRectMake(_pageControl.frame.origin.x, KSCREEN_HEIGHT-104-_pageControl.frame.size.height , _pageControl.frame.size.width,_pageControl.frame.size.height)];
+        
+        [_headerView setFrame:CGRectMake(_headerView.frame.origin.x, 0 , _headerView.frame.size.width,KSCREEN_HEIGHT - _collectionVW.frame.size.height - 144)];
 }
 
 - (void) menuAction: (id) sender {
