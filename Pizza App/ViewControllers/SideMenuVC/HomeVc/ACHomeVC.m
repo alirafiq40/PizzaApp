@@ -9,7 +9,7 @@
 #import "ACHomeVC.h"
 #import "ACProductCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "ACProductDetailVC.h"
+//#import "ACProductDetailVC.h"
 #import "AppDelegate.h"
 
 #define ITEMS_PER_PAGE 6

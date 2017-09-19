@@ -61,6 +61,7 @@
 #define RAND_FROM_TO(min, max) (min + arc4random_uniform(max - min + 1))
 
 
-#define KBaseURL @"http://www.aimscareadmin.com/api/"
+#define KBaseURL @"https://jayeat.com/api"
+#define KRestApiKey @"70279b0880bd50993bafc9dac8800bbd"
 
 #endif /* Constants_h */

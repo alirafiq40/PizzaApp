@@ -28,27 +28,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     self.title = @"Sign Up";
-
-    for(id aSubView in [self.view subviews])
-    {
-        if([aSubView isKindOfClass:[UITextField class]])
-        {
-            UITextField *textField=(UITextField*)aSubView;
-            textField.layer.borderColor=[KAppTheme_COLOR CGColor];
-            textField.layer.borderWidth=1.0;
-            textField.layer.cornerRadius = 3;
-            textField.clipsToBounds      = YES;
-            textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
-            
-            textField.layer.shadowColor = [KAppTheme_COLOR CGColor];
-            textField.layer.shadowRadius = 1.0f;
-            textField.layer.shadowOpacity = .9;
-            textField.layer.shadowOffset = CGSizeZero;
-            textField.layer.masksToBounds = NO;
-            textField.delegate = self;
-        }
-    }
-
     
     [self.navigationController.navigationBar setTranslucent:NO];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -79,27 +58,35 @@
 }
 
 -(IBAction)btnSignUpAction:(id)sender {
-    if(_txtUserName.text.length != 0 && _txtPswd.text.length != 0 && _txtEmail.text.length != 0 && _txtPHoneNumber.text.length != 0 && _txtAddress.text.length != 0) {
+    if(_txtUserName.text.length != 0 && _txtPswd.text.length != 0 && _txtEmail.text.length != 0) {
+        
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                _txtUserName.text,@"firstname",
+                                _txtUserName.text, @"lastname",
+                                _txtEmail.text, @"email",
+                                _txtPswd.text, @"password",
+                                _txtPswd.text, @"confirm_passowrd",
+                                nil];
         
         ACAPIManager * manager = [ACAPIManager new];
-        [manager signUp:_txtUserName.text email_value:_txtEmail.text password:_txtPswd.text profile_pic:@"" address:_txtAddress.text phoneNumber:_txtPHoneNumber.text completionBlock:^(NSString *message, NSMutableDictionary *resDict, BOOL isSuccessfull) {
+        [manager postRequestDataWithMethodName:@"/customer/register" withParameters:params token:@"" completionBlock:^(NSString *message, NSMutableDictionary *resDict, BOOL isSuccessfull) {
+
             
             if(isSuccessfull) {
                 
                 
                 [[NSUserDefaults standardUserDefaults] setUserLogin:YES];
-                [[NSUserDefaults standardUserDefaults] setUserID:[[resDict objectForKey:@"user"] valueForKey:@"id"]];
-                [[NSUserDefaults standardUserDefaults] setEmail:[[resDict objectForKey:@"user"] valueForKey:@"user_email"]];
-                [[NSUserDefaults standardUserDefaults] setUserName:[[resDict objectForKey:@"user"] valueForKey:@"user_name"]];
-                [[NSUserDefaults standardUserDefaults] setPswd:[[resDict objectForKey:@"user"] valueForKey:@"user_password"]];
-
+//                [[NSUserDefaults standardUserDefaults] setUserID:[[resDict objectForKey:@"user"] valueForKey:@"id"]];
+//                [[NSUserDefaults standardUserDefaults] setEmail:[[resDict objectForKey:@"user"] valueForKey:@"user_email"]];
+//                [[NSUserDefaults standardUserDefaults] setUserName:[[resDict objectForKey:@"user"] valueForKey:@"user_name"]];
+//                [[NSUserDefaults standardUserDefaults] setPswd:[[resDict objectForKey:@"user"] valueForKey:@"user_password"]];
+//
+//                
+//                [[NSUserDefaults standardUserDefaults] setAddress:_txtAddress.text];
+//                [[NSUserDefaults standardUserDefaults] setPhoneNumber:_txtPHoneNumber.text];
                 
-                [[NSUserDefaults standardUserDefaults] setAddress:_txtAddress.text];
-                [[NSUserDefaults standardUserDefaults] setPhoneNumber:_txtPHoneNumber.text];
-                
-                [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACHomeVC"]] animated:YES];
+                [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACLoginVC"]] animated:YES];
 
-                [[NSNotificationCenter defaultCenter] postNotificationName:K_Table_Reload object:self];
 
                 [FPUtilityFunctions showAlertView:@"" message:@"Successfully Activated" alertType:AlertSuccess];
             }

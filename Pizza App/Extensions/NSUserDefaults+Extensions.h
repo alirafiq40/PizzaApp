@@ -28,22 +28,28 @@
 - (BOOL)isUserLogin;
 - (void)setUserLogin:(BOOL)status;
 
-- (NSString*)userName;
-- (void)setUserName:(NSString*)userName;
+- (NSString*)name;
+- (void)setName:(NSString*)name;
 
 - (NSString*)email;
 - (void)setEmail:(NSString*)email;
 
-- (NSString*)pswd;
-- (void)setPswd:(NSString*)pswd;
+- (NSString*)token;
+- (void)setToken:(NSString*)token;
 
-- (NSString*)phoneNumber;
-- (void)setPhoneNumber:(NSString*)phoneNumber;
-
-- (NSString*)address;
-- (void)setAddress:(NSString*)address;
-
-- (NSString*)userID;
-- (void)setUserID:(NSString*)userID;
+//- (NSString*)phoneNumber;
+//- (void)setPhoneNumber:(NSString*)phoneNumber;
+//
+//- (NSString*)address;
+//- (void)setAddress:(NSString*)address;
+//
+//- (NSString*)userID;
+//- (void)setUserID:(NSString*)userID;
+//
+//
+//"token": "9871c5623d2f34807405c4ae6b9979d4",
+//"name": "atif rehman",
+//"email": "link_atif@yahoo.com",
+//"message": "Login"
 @end
 

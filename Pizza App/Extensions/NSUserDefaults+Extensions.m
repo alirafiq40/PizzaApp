@@ -12,9 +12,12 @@ NSString * const KFCategoryID = @"KFCategoryID";
 NSString * const KFCategoryTitle = @"KFCategoryTitle";
 NSString * const KFAddressArray = @"KFAddressArray";
 
-NSString * const KFUserName = @"KFUserName";
+NSString * const KFName = @"KFName";
 NSString * const KFEmail = @"KFEmail";
 NSString * const KFPswd = @"KFPswd";
+NSString * const KFToken = @"KFToken";
+
+
 NSString * const KFPhoneNumber = @"KFPhoneNumber";
 NSString * const KFAddress = @"KFAddress";
 NSString * const KFLoginStatus = @"KFLoginStatus";
@@ -87,11 +90,11 @@ NSString * const KFUserID = @"KFUserID";
     [self synchronize];
 }
 
-- (NSString*)userName {
-    return [self valueForKey:KFUserName];
+- (NSString*)name {
+    return [self valueForKey:KFName];
 }
-- (void)setUserName:(NSString*)userName  {
-    [self setValue:userName forKey:KFUserName];
+- (void)setName:(NSString*)name  {
+    [self setValue:name forKey:KFName];
     [self synchronize];
 }
 
@@ -103,42 +106,52 @@ NSString * const KFUserID = @"KFUserID";
     [self synchronize];
 }
 
-
-- (NSString*)pswd {
-    return [self valueForKey:KFPswd];
+- (NSString*)token {
+    return [self valueForKey:KFToken];
 }
-- (void)setPswd:(NSString*)pswd  {
-    [self setValue:pswd forKey:KFPswd];
+
+- (void)setToken:(NSString*)token {
+    [self setValue:token forKey:KFToken];
     [self synchronize];
 }
 
 
-- (NSString*)phoneNumber {
-    return [self valueForKey:KFPhoneNumber];
-}
-- (void)setPhoneNumber:(NSString*)phoneNumber  {
-    [self setValue:phoneNumber forKey:KFPhoneNumber];
-    [self synchronize];
-}
 
-
-- (NSString*)address {
-    return [self valueForKey:KFAddress];
-}
-
-- (void)setAddress:(NSString*)address  {
-    [self setValue:address forKey:KFAddress];
-    [self synchronize];
-}
-
-- (NSString*)userID {
-    return [self valueForKey:KFUserID];
-}
-
-- (void)setUserID:(NSString*)userID  {
-    [self setValue:userID forKey:KFUserID];
-    [self synchronize];
-}
+//- (NSString*)pswd {
+//    return [self valueForKey:KFPswd];
+//}
+//- (void)setPswd:(NSString*)pswd  {
+//    [self setValue:pswd forKey:KFPswd];
+//    [self synchronize];
+//}
+//
+//
+//- (NSString*)phoneNumber {
+//    return [self valueForKey:KFPhoneNumber];
+//}
+//- (void)setPhoneNumber:(NSString*)phoneNumber  {
+//    [self setValue:phoneNumber forKey:KFPhoneNumber];
+//    [self synchronize];
+//}
+//
+//
+//- (NSString*)address {
+//    return [self valueForKey:KFAddress];
+//}
+//
+//- (void)setAddress:(NSString*)address  {
+//    [self setValue:address forKey:KFAddress];
+//    [self synchronize];
+//}
+//
+//- (NSString*)userID {
+//    return [self valueForKey:KFUserID];
+//}
+//
+//- (void)setUserID:(NSString*)userID  {
+//    [self setValue:userID forKey:KFUserID];
+//    [self synchronize];
+//}
 
 
 @end

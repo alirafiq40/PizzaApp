@@ -47,21 +47,15 @@
 		C2B60AD81F57433800379524 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A821F57433800379524 /* UIViewController+RESideMenu.m */; };
 		C2B60AD91F57433800379524 /* FPUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A851F57433800379524 /* FPUtilityFunctions.m */; };
 		C2B60ADA1F57433800379524 /* ACContactUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A891F57433800379524 /* ACContactUsVC.m */; };
-		C2B60ADB1F57433800379524 /* ACProductCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A8C1F57433800379524 /* ACProductCollectionVC.m */; };
-		C2B60ADC1F57433800379524 /* ACProductDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A8F1F57433800379524 /* ACProductDetailVC.m */; };
-		C2B60ADD1F57433800379524 /* ProfileImagesViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A911F57433800379524 /* ProfileImagesViewerVC.m */; };
-		C2B60ADE1F57433800379524 /* ACSearchVcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A941F57433800379524 /* ACSearchVcViewController.m */; };
 		C2B60ADF1F57433800379524 /* ACLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A981F57433800379524 /* ACLoginVC.m */; };
 		C2B60AE01F57433800379524 /* ACSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A9A1F57433800379524 /* ACSignUpVC.m */; };
 		C2B60AE11F57433800379524 /* ACCartBuyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A9D1F57433800379524 /* ACCartBuyVC.m */; };
 		C2B60AE21F57433800379524 /* ACCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A9F1F57433800379524 /* ACCartVC.m */; };
-		C2B60AE71F57433800379524 /* ACDailyLivingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AAA1F57433800379524 /* ACDailyLivingVC.m */; };
 		C2B60AE91F57433900379524 /* ACHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AB01F57433800379524 /* ACHomeVC.m */; };
 		C2B60AEA1F57433900379524 /* ACOrderHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AB41F57433800379524 /* ACOrderHistoryVC.m */; };
-		C2B60AEB1F57433900379524 /* ACReturnPolicyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AB71F57433800379524 /* ACReturnPolicyVC.m */; };
-		C2B60AEC1F57433900379524 /* ACTocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60ABA1F57433800379524 /* ACTocVC.m */; };
 		C2BB925B1F63CC110028F74C /* EZRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB925A1F63CC110028F74C /* EZRatingView.m */; };
 		C2BB925F1F63CC6B0028F74C /* ReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB925E1F63CC6B0028F74C /* ReviewsViewController.m */; };
+		C2CB9C6F1F6DB02C00A7461E /* ACForgotVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB9C6E1F6DB02C00A7461E /* ACForgotVC.m */; };
 		F324AB84435987C45A21BDAD /* Pods_Pizza_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9124B42F8A30544AF956A85A /* Pods_Pizza_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,14 +135,6 @@
 		C2B60A851F57433800379524 /* FPUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPUtilityFunctions.m; sourceTree = "<group>"; };
 		C2B60A881F57433800379524 /* ACContactUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACContactUsVC.h; sourceTree = "<group>"; };
 		C2B60A891F57433800379524 /* ACContactUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACContactUsVC.m; sourceTree = "<group>"; };
-		C2B60A8B1F57433800379524 /* ACProductCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACProductCollectionVC.h; sourceTree = "<group>"; };
-		C2B60A8C1F57433800379524 /* ACProductCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACProductCollectionVC.m; sourceTree = "<group>"; };
-		C2B60A8E1F57433800379524 /* ACProductDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACProductDetailVC.h; sourceTree = "<group>"; };
-		C2B60A8F1F57433800379524 /* ACProductDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACProductDetailVC.m; sourceTree = "<group>"; };
-		C2B60A901F57433800379524 /* ProfileImagesViewerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileImagesViewerVC.h; sourceTree = "<group>"; };
-		C2B60A911F57433800379524 /* ProfileImagesViewerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileImagesViewerVC.m; sourceTree = "<group>"; };
-		C2B60A931F57433800379524 /* ACSearchVcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSearchVcViewController.h; sourceTree = "<group>"; };
-		C2B60A941F57433800379524 /* ACSearchVcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSearchVcViewController.m; sourceTree = "<group>"; };
 		C2B60A971F57433800379524 /* ACLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACLoginVC.h; sourceTree = "<group>"; };
 		C2B60A981F57433800379524 /* ACLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACLoginVC.m; sourceTree = "<group>"; };
 		C2B60A991F57433800379524 /* ACSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSignUpVC.h; sourceTree = "<group>"; };
@@ -157,20 +143,16 @@
 		C2B60A9D1F57433800379524 /* ACCartBuyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCartBuyVC.m; sourceTree = "<group>"; };
 		C2B60A9E1F57433800379524 /* ACCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACCartVC.h; sourceTree = "<group>"; };
 		C2B60A9F1F57433800379524 /* ACCartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCartVC.m; sourceTree = "<group>"; };
-		C2B60AA91F57433800379524 /* ACDailyLivingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDailyLivingVC.h; sourceTree = "<group>"; };
-		C2B60AAA1F57433800379524 /* ACDailyLivingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDailyLivingVC.m; sourceTree = "<group>"; };
 		C2B60AAF1F57433800379524 /* ACHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACHomeVC.h; sourceTree = "<group>"; };
 		C2B60AB01F57433800379524 /* ACHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACHomeVC.m; sourceTree = "<group>"; };
 		C2B60AB31F57433800379524 /* ACOrderHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACOrderHistoryVC.h; sourceTree = "<group>"; };
 		C2B60AB41F57433800379524 /* ACOrderHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACOrderHistoryVC.m; sourceTree = "<group>"; };
-		C2B60AB61F57433800379524 /* ACReturnPolicyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACReturnPolicyVC.h; sourceTree = "<group>"; };
-		C2B60AB71F57433800379524 /* ACReturnPolicyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACReturnPolicyVC.m; sourceTree = "<group>"; };
-		C2B60AB91F57433800379524 /* ACTocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTocVC.h; sourceTree = "<group>"; };
-		C2B60ABA1F57433800379524 /* ACTocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACTocVC.m; sourceTree = "<group>"; };
 		C2BB92591F63CC110028F74C /* EZRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRatingView.h; sourceTree = "<group>"; };
 		C2BB925A1F63CC110028F74C /* EZRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRatingView.m; sourceTree = "<group>"; };
 		C2BB925D1F63CC6B0028F74C /* ReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewsViewController.h; sourceTree = "<group>"; };
 		C2BB925E1F63CC6B0028F74C /* ReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsViewController.m; sourceTree = "<group>"; };
+		C2CB9C6D1F6DB02C00A7461E /* ACForgotVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACForgotVC.h; sourceTree = "<group>"; };
+		C2CB9C6E1F6DB02C00A7461E /* ACForgotVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACForgotVC.m; sourceTree = "<group>"; };
 		DECD2D86D920A6BAEC75021F /* Pods-Pizza App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza App/Pods-Pizza App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -412,9 +394,6 @@
 			children = (
 				C2BB925C1F63CC590028F74C /* Reviews */,
 				C2B60A871F57433800379524 /* ContactUsVC */,
-				C2B60A8A1F57433800379524 /* ProductCollectionVC */,
-				C2B60A8D1F57433800379524 /* ProductDetailVC */,
-				C2B60A921F57433800379524 /* SearchVC */,
 				C2B60A951F57433800379524 /* SideMenuVC */,
 			);
 			path = ViewControllers;
@@ -429,35 +408,6 @@
 			path = ContactUsVC;
 			sourceTree = "<group>";
 		};
-		C2B60A8A1F57433800379524 /* ProductCollectionVC */ = {
-			isa = PBXGroup;
-			children = (
-				C2B60A8B1F57433800379524 /* ACProductCollectionVC.h */,
-				C2B60A8C1F57433800379524 /* ACProductCollectionVC.m */,
-			);
-			path = ProductCollectionVC;
-			sourceTree = "<group>";
-		};
-		C2B60A8D1F57433800379524 /* ProductDetailVC */ = {
-			isa = PBXGroup;
-			children = (
-				C2B60A8E1F57433800379524 /* ACProductDetailVC.h */,
-				C2B60A8F1F57433800379524 /* ACProductDetailVC.m */,
-				C2B60A901F57433800379524 /* ProfileImagesViewerVC.h */,
-				C2B60A911F57433800379524 /* ProfileImagesViewerVC.m */,
-			);
-			path = ProductDetailVC;
-			sourceTree = "<group>";
-		};
-		C2B60A921F57433800379524 /* SearchVC */ = {
-			isa = PBXGroup;
-			children = (
-				C2B60A931F57433800379524 /* ACSearchVcViewController.h */,
-				C2B60A941F57433800379524 /* ACSearchVcViewController.m */,
-			);
-			path = SearchVC;
-			sourceTree = "<group>";
-		};
 		C2B60A951F57433800379524 /* SideMenuVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,9 +415,6 @@
 				C2B60AB21F57433800379524 /* OrderHistoryVC */,
 				C2B60A961F57433800379524 /* ACLoginVC */,
 				C2B60A9B1F57433800379524 /* CartVC */,
-				C2B60AA81F57433800379524 /* DailyLivingVC */,
-				C2B60AB51F57433800379524 /* ReturnPolicyVC */,
-				C2B60AB81F57433800379524 /* TocVC */,
 			);
 			path = SideMenuVC;
 			sourceTree = "<group>";
@@ -479,6 +426,8 @@
 				C2B60A981F57433800379524 /* ACLoginVC.m */,
 				C2B60A991F57433800379524 /* ACSignUpVC.h */,
 				C2B60A9A1F57433800379524 /* ACSignUpVC.m */,
+				C2CB9C6D1F6DB02C00A7461E /* ACForgotVC.h */,
+				C2CB9C6E1F6DB02C00A7461E /* ACForgotVC.m */,
 			);
 			path = ACLoginVC;
 			sourceTree = "<group>";
@@ -492,15 +441,6 @@
 				C2B60A9F1F57433800379524 /* ACCartVC.m */,
 			);
 			path = CartVC;
-			sourceTree = "<group>";
-		};
-		C2B60AA81F57433800379524 /* DailyLivingVC */ = {
-			isa = PBXGroup;
-			children = (
-				C2B60AA91F57433800379524 /* ACDailyLivingVC.h */,
-				C2B60AAA1F57433800379524 /* ACDailyLivingVC.m */,
-			);
-			path = DailyLivingVC;
 			sourceTree = "<group>";
 		};
 		C2B60AAE1F57433800379524 /* HomeVc */ = {
@@ -519,24 +459,6 @@
 				C2B60AB41F57433800379524 /* ACOrderHistoryVC.m */,
 			);
 			path = OrderHistoryVC;
-			sourceTree = "<group>";
-		};
-		C2B60AB51F57433800379524 /* ReturnPolicyVC */ = {
-			isa = PBXGroup;
-			children = (
-				C2B60AB61F57433800379524 /* ACReturnPolicyVC.h */,
-				C2B60AB71F57433800379524 /* ACReturnPolicyVC.m */,
-			);
-			path = ReturnPolicyVC;
-			sourceTree = "<group>";
-		};
-		C2B60AB81F57433800379524 /* TocVC */ = {
-			isa = PBXGroup;
-			children = (
-				C2B60AB91F57433800379524 /* ACTocVC.h */,
-				C2B60ABA1F57433800379524 /* ACTocVC.m */,
-			);
-			path = TocVC;
 			sourceTree = "<group>";
 		};
 		C2BB92581F63CC110028F74C /* EZRatingView */ = {
@@ -727,10 +649,8 @@
 				C2B60ABF1F57433800379524 /* UIView+ParentCell.m in Sources */,
 				C2B60ABC1F57433800379524 /* ACOrderHistoryTableViewCell.m in Sources */,
 				C2B60AC01F57433800379524 /* NSUserDefaults+Extensions.m in Sources */,
-				C2B60ADE1F57433800379524 /* ACSearchVcViewController.m in Sources */,
 				C2B60AD61F57433800379524 /* RECommonFunctions.m in Sources */,
 				C2ABE1421F58DE9D00614189 /* MenuTableViewCell.m in Sources */,
-				C2B60ADB1F57433800379524 /* ACProductCollectionVC.m in Sources */,
 				C2B60AD51F57433800379524 /* DEMORootViewController.m in Sources */,
 				C24DF1BB1F63D1740075AB56 /* UIImage+EZAdditions.m in Sources */,
 				C2B60ADF1F57433800379524 /* ACLoginVC.m in Sources */,
@@ -742,7 +662,6 @@
 				C24DF1BE1F63F5380075AB56 /* FeedbackViewController.m in Sources */,
 				C2B60ACC1F57433800379524 /* ActionSheetCustomPicker.m in Sources */,
 				C2BB925F1F63CC6B0028F74C /* ReviewsViewController.m in Sources */,
-				C2B60ADC1F57433800379524 /* ACProductDetailVC.m in Sources */,
 				C2B60A401F57430B00379524 /* ACAPIManager.m in Sources */,
 				C2B60AD21F57433800379524 /* DistancePickerView.m in Sources */,
 				C2B60A241F5742CD00379524 /* main.m in Sources */,
@@ -750,9 +669,6 @@
 				C2B60AD31F57433800379524 /* SWActionSheet.m in Sources */,
 				C2B60AE21F57433800379524 /* ACCartVC.m in Sources */,
 				C2BB925B1F63CC110028F74C /* EZRatingView.m in Sources */,
-				C2B60AE71F57433800379524 /* ACDailyLivingVC.m in Sources */,
-				C2B60ADD1F57433800379524 /* ProfileImagesViewerVC.m in Sources */,
-				C2B60AEB1F57433900379524 /* ACReturnPolicyVC.m in Sources */,
 				C2B60AEA1F57433900379524 /* ACOrderHistoryVC.m in Sources */,
 				C2B60ADA1F57433800379524 /* ACContactUsVC.m in Sources */,
 				C2B60AD71F57433800379524 /* RESideMenu.m in Sources */,
@@ -760,8 +676,8 @@
 				C2B60A411F57430B00379524 /* AppDelegate.m in Sources */,
 				C2B60ABB1F57433800379524 /* ACCartTableViewCell.m in Sources */,
 				C2B60ABD1F57433800379524 /* FMMosaicCellView.m in Sources */,
-				C2B60AEC1F57433900379524 /* ACTocVC.m in Sources */,
 				C2B60AE11F57433800379524 /* ACCartBuyVC.m in Sources */,
+				C2CB9C6F1F6DB02C00A7461E /* ACForgotVC.m in Sources */,
 				C2B60ACB1F57433800379524 /* AbstractActionSheetPicker.m in Sources */,
 				C2B60AC91F57433800379524 /* ACCartSingeltonManager.m in Sources */,
 				C2B60AE91F57433900379524 /* ACHomeVC.m in Sources */,

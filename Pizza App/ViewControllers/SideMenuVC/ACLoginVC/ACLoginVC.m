@@ -23,36 +23,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    id<STPBackendAPIAdapter> apiAdapter = [[MyAPIAdapter alloc] init];
-//    self.paymentContext = [[STPPaymentContext alloc] initWithAPIAdapter:apiAdapter];
-//    self.paymentContext.delegate = self;
-//    self.paymentContext.hostViewController = self;
-//    self.paymentContext.paymentAmount = 5000 // This in cents, i.e. $50 USD
+    //    id<STPBackendAPIAdapter> apiAdapter = [[MyAPIAdapter alloc] init];
+    //    self.paymentContext = [[STPPaymentContext alloc] initWithAPIAdapter:apiAdapter];
+    //    self.paymentContext.delegate = self;
+    //    self.paymentContext.hostViewController = self;
+    //    self.paymentContext.paymentAmount = 5000 // This in cents, i.e. $50 USD
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     
     self.title = @"Sign In";
-    
-    for(id aSubView in [self.view subviews])
-    {
-        if([aSubView isKindOfClass:[UITextField class]])
-        {
-            UITextField *textField=(UITextField*)aSubView;
-            textField.layer.borderColor=[KAppTheme_COLOR CGColor];
-            textField.layer.borderWidth=1.0;
-            textField.layer.cornerRadius = 3;
-            textField.clipsToBounds      = YES;
-            textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
-            
-            textField.layer.shadowColor = [KAppTheme_COLOR CGColor];
-            textField.layer.shadowRadius = 1.0f;
-            textField.layer.shadowOpacity = .9;
-            textField.layer.shadowOffset = CGSizeZero;
-            textField.layer.masksToBounds = NO;
-            textField.delegate = self;
-        }
-    }
     
     [self.navigationController.navigationBar setTranslucent:NO];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -83,38 +63,42 @@
 
 
 -(IBAction)btnLoginAction:(id)sender {
-
-if(_txtUserName.text.length != 0 && _txtPswd.text.length != 0) {
     
-    ACAPIManager * manager = [ACAPIManager new];
-    [manager login:_txtUserName.text password:_txtPswd.text  completionBlock:^(NSString *message, NSMutableDictionary *resDict, BOOL isSuccessfull) {
+    if(_txtUserName.text.length != 0 && _txtPswd.text.length != 0) {
         
-        if(isSuccessfull) {
-            
-            [[NSUserDefaults standardUserDefaults] setUserLogin:YES];
-            [[NSUserDefaults standardUserDefaults] setUserID:[[resDict objectForKey:@"user"] valueForKey:@"id"]];
-            [[NSUserDefaults standardUserDefaults] setAddress:[[resDict objectForKey:@"user"] valueForKey:@"address"]];
-            [[NSUserDefaults standardUserDefaults] setPhoneNumber:[[resDict objectForKey:@"user"] valueForKey:@"phone"]];
-            [[NSUserDefaults standardUserDefaults] setEmail:[[resDict objectForKey:@"user"] valueForKey:@"user_email"]];
-            [[NSUserDefaults standardUserDefaults] setUserName:[[resDict objectForKey:@"user"] valueForKey:@"user_name"]];
-
-            
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACHomeVC"]] animated:YES];
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:K_Table_Reload object:self];
-            
-            [FPUtilityFunctions showAlertView:@"" message:@"Successfully Activated" alertType:AlertSuccess];
-        }
-        else {
-            [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
-        }
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                _txtUserName.text,@"username",
+                                _txtPswd.text, @"password",
+                                nil];
         
-    }];
-    
-}
-else {
-    [FPUtilityFunctions showAlertView:@"Error" message:@"Please complete all fields" alertType:AlertFailure];
-}
+        ACAPIManager * manager = [ACAPIManager new];
+        [manager postRequestDataWithMethodName:@"/customer/login" withParameters:params token:@"" completionBlock:^(NSString *message, NSMutableDictionary *resDict, BOOL isSuccessfull) {
+            
+        
+            if(isSuccessfull) {
+                
+                [[NSUserDefaults standardUserDefaults] setUserLogin:YES];
+                [[NSUserDefaults standardUserDefaults] setToken:[[resDict objectForKey:@"data"] valueForKey:@"token"]];
+                [[NSUserDefaults standardUserDefaults] setEmail:[[resDict objectForKey:@"data"] valueForKey:@"email"]];
+                [[NSUserDefaults standardUserDefaults] setName:[[resDict objectForKey:@"data"] valueForKey:@"name"]];
+                
+                
+                [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACHomeVC"]] animated:YES];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:K_Table_Reload object:self];
+                
+                [FPUtilityFunctions showAlertView:@"" message:@"Successfully Activated" alertType:AlertSuccess];
+            }
+            else {
+                [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
+            }
+            
+        }];
+        
+    }
+    else {
+        [FPUtilityFunctions showAlertView:@"Error" message:@"Please complete all fields" alertType:AlertFailure];
+    }
 }
 
 //#pragma mark - StripePaymentMethod
