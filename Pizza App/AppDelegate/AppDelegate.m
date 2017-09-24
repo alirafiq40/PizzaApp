@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 @import Stripe;
 
 //NSString * const StripePublishableKey = @"pk_live_wSBNIJLG1EGX04XCkSzGmHhF";//Live
@@ -24,6 +25,9 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
     
     [Stripe setDefaultPublishableKey:StripePublishableKey];
     
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+
 //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
 //                                      forBarPosition:UIBarPositionAny
 //                                          barMetrics:UIBarMetricsDefault];
@@ -50,6 +54,7 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
     
     return YES;
 }
+
 
 -(void)setupTabBarAppearences
 {

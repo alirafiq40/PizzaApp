@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C24DF1BB1F63D1740075AB56 /* UIImage+EZAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C24DF1BA1F63D1740075AB56 /* UIImage+EZAdditions.m */; };
 		C24DF1BE1F63F5380075AB56 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24DF1BD1F63F5380075AB56 /* FeedbackViewController.m */; };
+		C29F3B811F78167E00AE5E25 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */; };
+		C29F3B821F78167E00AE5E25 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */; };
 		C2ABE1421F58DE9D00614189 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ABE1411F58DE9D00614189 /* MenuTableViewCell.m */; };
 		C2ABE1441F58E0D700614189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2ABE1431F58E0D700614189 /* Assets.xcassets */; };
 		C2B60A241F5742CD00379524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A231F5742CD00379524 /* main.m */; };
@@ -55,17 +57,29 @@
 		C2B60AEA1F57433900379524 /* ACOrderHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60AB41F57433800379524 /* ACOrderHistoryVC.m */; };
 		C2BB925B1F63CC110028F74C /* EZRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB925A1F63CC110028F74C /* EZRatingView.m */; };
 		C2BB925F1F63CC6B0028F74C /* ReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB925E1F63CC6B0028F74C /* ReviewsViewController.m */; };
+		C2C6DAEB1F78181B0037CDBD /* FBSDKCoreKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */; };
+		C2C6DAEC1F78181B0037CDBD /* FBSDKLoginKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */; };
+		C2C6DAED1F78182F0037CDBD /* FBSDKCoreKit.framework in Headers */ = {isa = PBXBuildFile; fileRef = C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */; };
+		C2C6DAEE1F78182F0037CDBD /* FBSDKLoginKit.framework in Headers */ = {isa = PBXBuildFile; fileRef = C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */; };
+		C2C6DAF01F781BA10037CDBD /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DAEF1F781BA10037CDBD /* AFNetworking.framework */; };
+		C2C6DAF21F781BAD0037CDBD /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DAF11F781BAD0037CDBD /* SVProgressHUD.framework */; };
+		C2C6DAF51F781BCF0037CDBD /* AMSmoothAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DAF41F781BCF0037CDBD /* AMSmoothAlert.framework */; };
+		C2C6DAF71F781BE50037CDBD /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DAF61F781BE50037CDBD /* Stripe.framework */; };
+		C2C6DAFB1F781D6D0037CDBD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DAFA1F781D6D0037CDBD /* Bolts.framework */; };
+		C2C6DAFD1F781E000037CDBD /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DAFC1F781E000037CDBD /* IQKeyboardManager.framework */; };
+		C2C6DAFF1F781E110037CDBD /* PaymentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DAFE1F781E110037CDBD /* PaymentKit.framework */; };
+		C2C6DB011F781E5A0037CDBD /* libwebp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6DB001F781E5A0037CDBD /* libwebp.framework */; };
 		C2CB9C6F1F6DB02C00A7461E /* ACForgotVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB9C6E1F6DB02C00A7461E /* ACForgotVC.m */; };
-		F324AB84435987C45A21BDAD /* Pods_Pizza_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9124B42F8A30544AF956A85A /* Pods_Pizza_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		358F979DA5E7FEA464742C56 /* Pods-Pizza App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza App/Pods-Pizza App.debug.xcconfig"; sourceTree = "<group>"; };
-		9124B42F8A30544AF956A85A /* Pods_Pizza_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pizza_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24DF1B91F63D1740075AB56 /* UIImage+EZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EZAdditions.h"; sourceTree = "<group>"; };
 		C24DF1BA1F63D1740075AB56 /* UIImage+EZAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EZAdditions.m"; sourceTree = "<group>"; };
 		C24DF1BC1F63F5380075AB56 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		C24DF1BD1F63F5380075AB56 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C2ABE13F1F58CF2C00614189 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C2ABE1401F58DE9D00614189 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		C2ABE1411F58DE9D00614189 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
@@ -151,6 +165,14 @@
 		C2BB925A1F63CC110028F74C /* EZRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRatingView.m; sourceTree = "<group>"; };
 		C2BB925D1F63CC6B0028F74C /* ReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewsViewController.h; sourceTree = "<group>"; };
 		C2BB925E1F63CC6B0028F74C /* ReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsViewController.m; sourceTree = "<group>"; };
+		C2C6DAEF1F781BA10037CDBD /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		C2C6DAF11F781BAD0037CDBD /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		C2C6DAF41F781BCF0037CDBD /* AMSmoothAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMSmoothAlert.framework; path = "Pods/../build/Debug-iphoneos/AMSmoothAlert/AMSmoothAlert.framework"; sourceTree = "<group>"; };
+		C2C6DAF61F781BE50037CDBD /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
+		C2C6DAFA1F781D6D0037CDBD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
+		C2C6DAFC1F781E000037CDBD /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = "Pods/../build/Debug-iphoneos/IQKeyboardManager/IQKeyboardManager.framework"; sourceTree = "<group>"; };
+		C2C6DAFE1F781E110037CDBD /* PaymentKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaymentKit.framework; path = "Pods/../build/Debug-iphoneos/PaymentKit/PaymentKit.framework"; sourceTree = "<group>"; };
+		C2C6DB001F781E5A0037CDBD /* libwebp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libwebp.framework; path = "Pods/../build/Debug-iphoneos/libwebp/libwebp.framework"; sourceTree = "<group>"; };
 		C2CB9C6D1F6DB02C00A7461E /* ACForgotVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACForgotVC.h; sourceTree = "<group>"; };
 		C2CB9C6E1F6DB02C00A7461E /* ACForgotVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACForgotVC.m; sourceTree = "<group>"; };
 		DECD2D86D920A6BAEC75021F /* Pods-Pizza App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza App/Pods-Pizza App.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +183,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F324AB84435987C45A21BDAD /* Pods_Pizza_App.framework in Frameworks */,
+				C2C6DB011F781E5A0037CDBD /* libwebp.framework in Frameworks */,
+				C2C6DAFF1F781E110037CDBD /* PaymentKit.framework in Frameworks */,
+				C2C6DAFD1F781E000037CDBD /* IQKeyboardManager.framework in Frameworks */,
+				C2C6DAFB1F781D6D0037CDBD /* Bolts.framework in Frameworks */,
+				C2C6DAF71F781BE50037CDBD /* Stripe.framework in Frameworks */,
+				C2C6DAF51F781BCF0037CDBD /* AMSmoothAlert.framework in Frameworks */,
+				C2C6DAF21F781BAD0037CDBD /* SVProgressHUD.framework in Frameworks */,
+				C2C6DAF01F781BA10037CDBD /* AFNetworking.framework in Frameworks */,
+				C29F3B811F78167E00AE5E25 /* FBSDKCoreKit.framework in Frameworks */,
+				C29F3B821F78167E00AE5E25 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +202,16 @@
 		6ED557CF34F2BF224861FB70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9124B42F8A30544AF956A85A /* Pods_Pizza_App.framework */,
+				C2C6DB001F781E5A0037CDBD /* libwebp.framework */,
+				C2C6DAFE1F781E110037CDBD /* PaymentKit.framework */,
+				C2C6DAFC1F781E000037CDBD /* IQKeyboardManager.framework */,
+				C2C6DAFA1F781D6D0037CDBD /* Bolts.framework */,
+				C2C6DAF61F781BE50037CDBD /* Stripe.framework */,
+				C2C6DAF41F781BCF0037CDBD /* AMSmoothAlert.framework */,
+				C2C6DAF11F781BAD0037CDBD /* SVProgressHUD.framework */,
+				C2C6DAEF1F781BA10037CDBD /* AFNetworking.framework */,
+				C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */,
+				C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -494,6 +534,18 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C29F37231F7805B300AE5E25 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2C6DAED1F78182F0037CDBD /* FBSDKCoreKit.framework in Headers */,
+				C2C6DAEE1F78182F0037CDBD /* FBSDKLoginKit.framework in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		C2B60A1E1F5742CD00379524 /* Pizza App */ = {
 			isa = PBXNativeTarget;
@@ -505,6 +557,7 @@
 				C2B60A1D1F5742CD00379524 /* Resources */,
 				311A001AD9E203F10173BAA5 /* [CP] Embed Pods Frameworks */,
 				FFEF6853D7D4F8C664850B6E /* [CP] Copy Pods Resources */,
+				C29F37231F7805B300AE5E25 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -579,6 +632,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pizza App/Pods-Pizza App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AMSmoothAlert/AMSmoothAlert.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Facebook-iOS-SDK/Facebook_iOS_SDK.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/PaymentKit/PaymentKit.framework",
@@ -591,6 +646,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMSmoothAlert.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Facebook_iOS_SDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PaymentKit.framework",
@@ -644,6 +701,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C6DAEB1F78181B0037CDBD /* FBSDKCoreKit.framework in Sources */,
+				C2C6DAEC1F78181B0037CDBD /* FBSDKLoginKit.framework in Sources */,
 				C2B60ABE1F57433800379524 /* ACProductCollectionViewCell.m in Sources */,
 				C2B60AD41F57433800379524 /* DEMOLeftMenuViewController.m in Sources */,
 				C2B60ABF1F57433800379524 /* UIView+ParentCell.m in Sources */,
@@ -794,11 +853,27 @@
 			baseConfigurationReference = 358F979DA5E7FEA464742C56 /* Pods-Pizza App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"~/Documents/FacebookSDK",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AMSmoothAlert",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Stripe",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManager",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/PaymentKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/libwebp",
+				);
 				GCC_PREFIX_HEADER = "Pizza App/PrefixHeader.pch";
 				INFOPLIST_FILE = "Pizza App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "BaraqMedia.Pizza-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TopTaste.Baraq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -807,11 +882,27 @@
 			baseConfigurationReference = DECD2D86D920A6BAEC75021F /* Pods-Pizza App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"~/Documents/FacebookSDK",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AMSmoothAlert",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Stripe",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManager",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/PaymentKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/libwebp",
+				);
 				GCC_PREFIX_HEADER = "Pizza App/PrefixHeader.pch";
 				INFOPLIST_FILE = "Pizza App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "BaraqMedia.Pizza-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TopTaste.Baraq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

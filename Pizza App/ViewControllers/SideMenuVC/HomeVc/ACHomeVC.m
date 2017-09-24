@@ -8,7 +8,7 @@
 
 #import "ACHomeVC.h"
 #import "ACProductCollectionViewCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+//#import <SDWebImage/UIImageView+WebCache.h>
 //#import "ACProductDetailVC.h"
 #import "AppDelegate.h"
 

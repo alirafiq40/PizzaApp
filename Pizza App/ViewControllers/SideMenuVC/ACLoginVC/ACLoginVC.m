@@ -101,6 +101,44 @@
     }
 }
 
+- (IBAction)btnFbAction:(id)sender {
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            _txtUserName.text,@"email",
+                            _txtPswd.text, @"user_id",
+                            _txtPswd.text, @"given_name",
+                            _txtPswd.text, @"family_name",
+                            nil];
+    
+    ACAPIManager * manager = [ACAPIManager new];
+    [manager postRequestDataWithMethodName:@"/customer/authlogin" withParameters:params token:@"" completionBlock:^(NSString *message, NSMutableDictionary *resDict, BOOL isSuccessfull) {
+        
+        
+        if(isSuccessfull) {
+            
+            [[NSUserDefaults standardUserDefaults] setUserLogin:YES];
+            [[NSUserDefaults standardUserDefaults] setToken:[[resDict objectForKey:@"data"] valueForKey:@"token"]];
+            [[NSUserDefaults standardUserDefaults] setEmail:[[resDict objectForKey:@"data"] valueForKey:@"email"]];
+            [[NSUserDefaults standardUserDefaults] setName:[[resDict objectForKey:@"data"] valueForKey:@"name"]];
+            
+            
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ACHomeVC"]] animated:YES];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:K_Table_Reload object:self];
+            
+            [FPUtilityFunctions showAlertView:@"" message:@"Successfully Activated" alertType:AlertSuccess];
+        }
+        else {
+            [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
+        }
+        
+    }];
+
+}
+
+- (IBAction)btnGoogleAction:(id)sender {
+}
+
 //#pragma mark - StripePaymentMethod
 //- (void)paymentContextDidChange:(STPPaymentContext *)paymentContext {
 //    self.activityIndicator.animating = paymentContext.loading;

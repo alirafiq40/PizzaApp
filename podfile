@@ -1,13 +1,15 @@
 platform :ios, '8.0'
 
 target ‘Pizza App’ do
+#pod 'Google/SignIn'
+#pod 'Facebook-iOS-SDK'    
 pod "AFNetworking", "~> 2.5"
 pod 'IQKeyboardManager'
 pod 'SVProgressHUD'
 use_frameworks!
-pod 'Crashlytics'
+#pod 'Crashlytics'
 pod 'Stripe'
-pod 'SDWebImage/WebP'
+#pod 'SDWebImage/WebP'
 pod 'PaymentKit', :git => 'https://github.com/stripe/PaymentKit.git'
 pod 'AMSmoothAlert', '~> 1.0'
 

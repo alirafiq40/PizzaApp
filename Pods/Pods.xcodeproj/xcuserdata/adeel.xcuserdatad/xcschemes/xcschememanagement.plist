@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GPUImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,22 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>245004C7D2AB9C7F22F8C9717F6A7442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>279AA6726F52A334C45E85774BD21A3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45211B025612E6736125644B18225C2B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>45AF27B8B79D1330CBD0ECE0B50C6A19</key>
+		<key>44CAD6CE523055ED339E87154473A254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,17 +97,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C17D2A9FDAA999DF533CBB57AEA8618</key>
+		<key>7E0714A53C91682E6A7577A3416BB6AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>873822EBEB5E98F9A1DD86B94D0053F2</key>
+		<key>7E8C4EADBFAEDF83C4B28CBA8226A658</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>989C123D4DD54B5A69B43134BAE23C22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A147C442A8C389117EC16250167C8320</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8337BCD95E829C0FCE5B440CBB5FD78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6F14691C2A74F5B6024950C698A86DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D58054034EFF9D04D26C6D7954FC8ED9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

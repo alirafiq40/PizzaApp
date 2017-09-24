@@ -16,7 +16,7 @@
 #import "ActionSheetDatePicker.h"
 #import "ActionSheetDistancePicker.h"
 #import "ACCartTableViewCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+//#import <SDWebImage/UIImageView+WebCache.h>
 #import "RESideMenu.h"
 
 @interface ACCartBuyVC ()<UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate,ActionSheetPickerCustomDelegate,UIAlertViewDelegate>
@@ -141,7 +141,7 @@
     [self updateSizeColorDetail:cell.lblProductPrice tempDict:dict];
 
     
-    [cell.imgProduct sd_setImageWithURL:[NSURL URLWithString:[[dict objectForKey:@"mainDict"]  valueForKey:@"image1"]] placeholderImage:[UIImage imageNamed:@"sitting.png"]];
+//    [cell.imgProduct sd_setImageWithURL:[NSURL URLWithString:[[dict objectForKey:@"mainDict"]  valueForKey:@"image1"]] placeholderImage:[UIImage imageNamed:@"sitting.png"]];
     
     NSMutableDictionary * tempDict = [[ACCartSingeltonManager sharedManager].dictCartProducts objectForKey:strKey];
     NSMutableArray * arr = [tempDict objectForKey:@"arrayProducts"];
