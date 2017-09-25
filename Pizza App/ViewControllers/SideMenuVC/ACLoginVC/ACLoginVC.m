@@ -7,8 +7,12 @@
 //
 
 #import "ACLoginVC.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <GoogleOpenSource/GoogleOpenSource.h>
+#import <GooglePlus/GooglePlus.h>
 
-@interface ACLoginVC () <UITextFieldDelegate>
+@interface ACLoginVC () <UITextFieldDelegate, FBSDKLoginButtonDelegate>
 {
     STPPaymentContext * paymentContext;
 }
@@ -18,9 +22,11 @@
 @end
 
 @implementation ACLoginVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initiateGoogle];
+
     // Do any additional setup after loading the view.
     
     //    id<STPBackendAPIAdapter> apiAdapter = [[MyAPIAdapter alloc] init];
@@ -28,6 +34,15 @@
     //    self.paymentContext.delegate = self;
     //    self.paymentContext.hostViewController = self;
     //    self.paymentContext.paymentAmount = 5000 // This in cents, i.e. $50 USD
+    
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    loginButton.delegate = self;
+//    loginButton.readPermissions =
+//    @[@"public_profile", @"email"];
+//    // Optional: Place the button in the center of your view.
+//    loginButton.center = self.view.center;
+//    [self.view addSubview:loginButton];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -52,6 +67,17 @@
     self.navigationItem.leftBarButtonItem = buttonItem;
     
 }
+
+-(void)initiateGoogle{
+    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    signIn.shouldFetchGooglePlusUser = YES;
+    signIn.shouldFetchGoogleUserEmail = YES;
+    signIn.homeServerClientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
+    signIn.clientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
+    signIn.scopes = @[ kGTLAuthScopePlusLogin,kGTLAuthScopePlusUserinfoProfile ];
+    signIn.delegate = self;
+}
+
 
 - (void) menuAction: (id) sender {
     [self.sideMenuViewController presentLeftMenuViewController];
@@ -103,6 +129,42 @@
 
 - (IBAction)btnFbAction:(id)sender {
     
+    
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    login.loginBehavior = FBSDKLoginBehaviorSystemAccount;
+    
+    //    [login logOut];
+//    [SVProgressHUD show];
+//    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+    [login logInWithReadPermissions:@[@"email",@"public_profile"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
+//            [SVProgressHUD dismiss];
+            NSLog(@"Process error");
+            
+        } else if (result.isCancelled) {
+//            [SVProgressHUD dismiss];
+            NSLog(@"Cancelled");
+        } else {
+            if ([result.grantedPermissions containsObject:@"email"]) {
+                //  Before
+                NSString * accessToken = [FBSDKAccessToken currentAccessToken].tokenString;
+                
+                ;
+                
+                NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+                [parameters setValue:@"id, name, email, first_name, last_name" forKey:@"fields"];
+                
+                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters]
+                 startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error)
+                {
+                    NSLog(@"Fetched user is:%@", result);
+                }];
+            }
+            
+            
+        }}];
+
+    /*
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             _txtUserName.text,@"email",
                             _txtPswd.text, @"user_id",
@@ -133,10 +195,13 @@
         }
         
     }];
-
+    */
 }
 
 - (IBAction)btnGoogleAction:(id)sender {
+    
+    [[GPPSignIn sharedInstance]signOut];
+    [[GPPSignIn sharedInstance]authenticate];
 }
 
 //#pragma mark - StripePaymentMethod
@@ -196,6 +261,36 @@
 //        completion(STPShippingStatusInvalid, nil, nil, nil);
 //    }
 //}
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+              error:(NSError *)error {
+    
+    NSLog(@"%@",result.debugDescription);
+}
+
+#pragma mark - Google Login events
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth error: (NSError *) error{
+    GTLPlusPerson *person = [GPPSignIn sharedInstance].googlePlusUser;
+    if (person == nil) {
+        [SVProgressHUD dismiss];
+        return;
+    }
+    if (error){
+        [SVProgressHUD dismiss];
+        UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"Google Error!" message:@"There is an Error While Signing in with Google." delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:Nil, nil];
+        [alert show];
+    }
+    else{
+        NSString *serverCode = [GPPSignIn sharedInstance].homeServerAuthorizationCode;
+        if(serverCode){
+
+            ;
+        }else{
+            [SVProgressHUD dismiss];
+        }
+    }
+}
 
 
 @end

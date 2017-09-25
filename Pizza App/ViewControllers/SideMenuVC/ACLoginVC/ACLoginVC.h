@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
+#import <GooglePlus/GooglePlus.h>
+#import <CoreMotion/CoreMotion.h>
+
+@class GPPSignInButton;
 @import Stripe;
 
-@interface ACLoginVC : UIViewController <STPPaymentContextDelegate>
+@interface ACLoginVC : UIViewController <STPPaymentContextDelegate, GPPSignInDelegate>
 
 @end

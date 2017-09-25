@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <GoogleOpenSource/GoogleOpenSource.h>
+#import <GooglePlus/GooglePlus.h>
+
 @import Stripe;
 
 //NSString * const StripePublishableKey = @"pk_live_wSBNIJLG1EGX04XCkSzGmHhF";//Live
@@ -55,6 +58,21 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    if([[NSString stringWithFormat:@"%@",url] containsString:@"fb200194687188590"]) {
+        [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                       openURL:url
+                                             sourceApplication:sourceApplication
+                                                    annotation:annotation];
+
+    }
+    
+        return [GPPURLHandler handleURL:url
+                      sourceApplication:sourceApplication
+                             annotation:annotation];
+}
 
 -(void)setupTabBarAppearences
 {
@@ -153,6 +171,7 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
