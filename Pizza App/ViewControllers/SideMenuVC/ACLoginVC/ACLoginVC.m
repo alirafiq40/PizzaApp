@@ -72,7 +72,7 @@
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
     signIn.shouldFetchGoogleUserEmail = YES;
-    signIn.homeServerClientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
+//    signIn.homeServerClientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
     signIn.clientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
     signIn.scopes = @[ kGTLAuthScopePlusLogin,kGTLAuthScopePlusUserinfoProfile ];
     signIn.delegate = self;
@@ -200,7 +200,7 @@
 
 - (IBAction)btnGoogleAction:(id)sender {
     
-    [[GPPSignIn sharedInstance]signOut];
+//    [[GPPSignIn sharedInstance]signOut];
     [[GPPSignIn sharedInstance]authenticate];
 }
 

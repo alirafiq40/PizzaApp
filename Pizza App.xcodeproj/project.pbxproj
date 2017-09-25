@@ -11,6 +11,10 @@
 		C24DF1BE1F63F5380075AB56 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24DF1BD1F63F5380075AB56 /* FeedbackViewController.m */; };
 		C29F3B811F78167E00AE5E25 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */; };
 		C29F3B821F78167E00AE5E25 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */; };
+		C2AB15AC1F789EDA00960783 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2AB15AA1F789EDA00960783 /* GoogleOpenSource.framework */; };
+		C2AB15AD1F789EDA00960783 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2AB15AB1F789EDA00960783 /* GooglePlus.framework */; };
+		C2AB15B11F789F9700960783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2AB15B01F789F9700960783 /* GoogleService-Info.plist */; };
+		C2AB15B31F78AC1E00960783 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C2AB15B21F78AC1E00960783 /* libz.tbd */; };
 		C2ABE1421F58DE9D00614189 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ABE1411F58DE9D00614189 /* MenuTableViewCell.m */; };
 		C2ABE1441F58E0D700614189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2ABE1431F58E0D700614189 /* Assets.xcassets */; };
 		C2B60A241F5742CD00379524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B60A231F5742CD00379524 /* main.m */; };
@@ -80,6 +84,10 @@
 		C24DF1BD1F63F5380075AB56 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C2AB15AA1F789EDA00960783 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		C2AB15AB1F789EDA00960783 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
+		C2AB15B01F789F9700960783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C2AB15B21F78AC1E00960783 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C2ABE13F1F58CF2C00614189 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C2ABE1401F58DE9D00614189 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		C2ABE1411F58DE9D00614189 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
@@ -183,7 +191,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AB15B31F78AC1E00960783 /* libz.tbd in Frameworks */,
 				C2C6DB011F781E5A0037CDBD /* libwebp.framework in Frameworks */,
+				C2AB15AD1F789EDA00960783 /* GooglePlus.framework in Frameworks */,
+				C2AB15AC1F789EDA00960783 /* GoogleOpenSource.framework in Frameworks */,
 				C2C6DAFF1F781E110037CDBD /* PaymentKit.framework in Frameworks */,
 				C2C6DAFD1F781E000037CDBD /* IQKeyboardManager.framework in Frameworks */,
 				C2C6DAFB1F781D6D0037CDBD /* Bolts.framework in Frameworks */,
@@ -202,6 +213,7 @@
 		6ED557CF34F2BF224861FB70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2AB15B21F78AC1E00960783 /* libz.tbd */,
 				C2C6DB001F781E5A0037CDBD /* libwebp.framework */,
 				C2C6DAFE1F781E110037CDBD /* PaymentKit.framework */,
 				C2C6DAFC1F781E000037CDBD /* IQKeyboardManager.framework */,
@@ -210,6 +222,8 @@
 				C2C6DAF41F781BCF0037CDBD /* AMSmoothAlert.framework */,
 				C2C6DAF11F781BAD0037CDBD /* SVProgressHUD.framework */,
 				C2C6DAEF1F781BA10037CDBD /* AFNetworking.framework */,
+				C2AB15AA1F789EDA00960783 /* GoogleOpenSource.framework */,
+				C2AB15AB1F789EDA00960783 /* GooglePlus.framework */,
 				C29F3B7F1F78167E00AE5E25 /* FBSDKCoreKit.framework */,
 				C29F3B801F78167E00AE5E25 /* FBSDKLoginKit.framework */,
 			);
@@ -250,6 +264,7 @@
 				C2B60A861F57433800379524 /* ViewControllers */,
 				C2B60A301F5742CD00379524 /* LaunchScreen.storyboard */,
 				C2B60A331F5742CD00379524 /* Info.plist */,
+				C2AB15B01F789F9700960783 /* GoogleService-Info.plist */,
 				C2ABE1431F58E0D700614189 /* Assets.xcassets */,
 				C2B60A221F5742CD00379524 /* Supporting Files */,
 			);
@@ -606,6 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AB15B11F789F9700960783 /* GoogleService-Info.plist in Resources */,
 				C2B60AC51F57433800379524 /* Exo2-Bold.otf in Resources */,
 				C2B60A321F5742CD00379524 /* LaunchScreen.storyboard in Resources */,
 				C2ABE1441F58E0D700614189 /* Assets.xcassets in Resources */,
@@ -871,6 +887,27 @@
 				GCC_PREFIX_HEADER = "Pizza App/PrefixHeader.pch";
 				INFOPLIST_FILE = "Pizza App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AMSmoothAlert\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"GPUImage\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"PaymentKit\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Stripe\"",
+					"-framework",
+					"\"libwebp\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TopTaste.Baraq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
@@ -900,6 +937,29 @@
 				GCC_PREFIX_HEADER = "Pizza App/PrefixHeader.pch";
 				INFOPLIST_FILE = "Pizza App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AMSmoothAlert\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"Facebook_iOS_SDK\"",
+					"-framework",
+					"\"GPUImage\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"PaymentKit\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Stripe\"",
+					"-framework",
+					"\"libwebp\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TopTaste.Baraq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
