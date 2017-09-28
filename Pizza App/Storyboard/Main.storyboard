@@ -301,11 +301,11 @@
                     </navigationBar>
                     <connections>
                         <segue destination="KSe-jg-bfL" kind="push" id="YF1-95-QUW"/>
-                        <segue destination="AEM-Wh-emt" kind="push" id="zDd-hU-EQP"/>
-                        <segue destination="n3v-aV-Cvz" kind="relationship" relationship="rootViewController" id="cl9-lC-suw"/>
                         <segue destination="vda-MZ-Ddt" kind="push" id="cN7-Cs-6vd"/>
                         <segue destination="Dun-mD-bse" kind="push" id="o6B-WK-jpg"/>
                         <segue destination="gNP-Ww-NUo" kind="push" id="EmI-sU-9ZE"/>
+                        <segue destination="AEM-Wh-emt" kind="relationship" relationship="rootViewController" id="AeI-mm-ip8"/>
+                        <segue destination="n3v-aV-Cvz" kind="push" id="byY-Pe-Dym"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhU-tj-fpg" userLabel="First Responder" sceneMemberID="firstResponder"/>

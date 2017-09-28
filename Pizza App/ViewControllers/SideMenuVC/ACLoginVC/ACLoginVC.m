@@ -12,6 +12,9 @@
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
 
+static NSString * const kClientId = @"430658827099-7c718me4iinvagf1l10ml5qmjn2bdn1m.apps.googleusercontent.com";
+
+
 @interface ACLoginVC () <UITextFieldDelegate, FBSDKLoginButtonDelegate>
 {
     STPPaymentContext * paymentContext;
@@ -71,7 +74,7 @@
 -(void)initiateGoogle{
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
-    signIn.shouldFetchGoogleUserEmail = YES;
+//    signIn.shouldFetchGoogleUserEmail = YES;
 //    signIn.homeServerClientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
     signIn.clientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
     signIn.scopes = @[ kGTLAuthScopePlusLogin,kGTLAuthScopePlusUserinfoProfile ];
