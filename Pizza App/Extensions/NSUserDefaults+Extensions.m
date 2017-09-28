@@ -13,6 +13,8 @@ NSString * const KFCategoryTitle = @"KFCategoryTitle";
 NSString * const KFAddressArray = @"KFAddressArray";
 
 NSString * const KFName = @"KFName";
+NSString * const KFFirstName = @"KFFirstName";
+NSString * const KFLastName = @"KFLastName";
 NSString * const KFEmail = @"KFEmail";
 NSString * const KFPswd = @"KFPswd";
 NSString * const KFToken = @"KFToken";
@@ -105,6 +107,27 @@ NSString * const KFUserID = @"KFUserID";
     [self setValue:email forKey:KFEmail];
     [self synchronize];
 }
+
+- (NSString*)firstName{
+    return [self valueForKey:KFFirstName];
+}
+
+- (void)setFirstName:(NSString*)firstName {
+    [self setValue:firstName forKey:KFFirstName];
+    [self synchronize];
+}
+
+
+- (NSString*)lastName{
+    return [self valueForKey:KFLastName];
+}
+
+- (void)setLastName:(NSString*)lastName {
+    [self setValue:lastName forKey:KFLastName];
+    [self synchronize];
+}
+
+
 
 - (NSString*)token {
     return [self valueForKey:KFToken];

@@ -34,6 +34,13 @@
 - (NSString*)email;
 - (void)setEmail:(NSString*)email;
 
+- (NSString*)firstName;
+- (void)setFirstName:(NSString*)firstName;
+
+- (NSString*)lastName;
+- (void)setLastName:(NSString*)lastName;
+
+
 - (NSString*)token;
 - (void)setToken:(NSString*)token;
 

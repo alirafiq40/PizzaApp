@@ -21,16 +21,6 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>google</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.TopTaste.Baraq</string>
-			</array>
-		</dict>
-		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb200194687188590</string>
@@ -44,6 +34,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.TopTaste.Baraq</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.TopTaste.Baraq</string>
 			</array>
 		</dict>
 	</array>

@@ -74,9 +74,9 @@ static NSString * const kClientId = @"430658827099-7c718me4iinvagf1l10ml5qmjn2bd
 -(void)initiateGoogle{
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
-//    signIn.shouldFetchGoogleUserEmail = YES;
+    signIn.shouldFetchGoogleUserEmail = YES;
 //    signIn.homeServerClientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
-    signIn.clientID = @"430658827099-gpnuj35gasf7h20v0rc6k8oebbi35281.apps.googleusercontent.com";
+    signIn.clientID = kClientId;
     signIn.scopes = @[ kGTLAuthScopePlusLogin,kGTLAuthScopePlusUserinfoProfile ];
     signIn.delegate = self;
 }
@@ -204,6 +204,7 @@ static NSString * const kClientId = @"430658827099-7c718me4iinvagf1l10ml5qmjn2bd
 - (IBAction)btnGoogleAction:(id)sender {
     
 //    [[GPPSignIn sharedInstance]signOut];
+    [SVProgressHUD show];
     [[GPPSignIn sharedInstance]authenticate];
 }
 
@@ -274,25 +275,34 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 
 #pragma mark - Google Login events
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth error: (NSError *) error{
+    [SVProgressHUD dismiss];
+
     GTLPlusPerson *person = [GPPSignIn sharedInstance].googlePlusUser;
-    if (person == nil) {
-        [SVProgressHUD dismiss];
+    if (person != nil) {
+        
+        NSArray * emails = person.emails;
+        NSDictionary * emailDict = emails.firstObject;
+        
+        [[NSUserDefaults standardUserDefaults] setEmail:[emailDict valueForKey:@"value"]];
+        [[NSUserDefaults standardUserDefaults] setFirstName:person.name.givenName];
+        [[NSUserDefaults standardUserDefaults] setLastName:person.name.familyName];
+        [[NSUserDefaults standardUserDefaults] setName:person.displayName];
+        
+        
         return;
     }
     if (error){
-        [SVProgressHUD dismiss];
         UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"Google Error!" message:@"There is an Error While Signing in with Google." delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:Nil, nil];
         [alert show];
     }
-    else{
-        NSString *serverCode = [GPPSignIn sharedInstance].homeServerAuthorizationCode;
-        if(serverCode){
-
-            ;
-        }else{
-            [SVProgressHUD dismiss];
-        }
-    }
+//    else{
+//        NSString *serverCode = [GPPSignIn sharedInstance].homeServerAuthorizationCode;
+//        if(serverCode){
+//
+//            ;
+//        }else{
+//        }
+//    }
 }
 
 
