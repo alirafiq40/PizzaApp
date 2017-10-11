@@ -19,7 +19,7 @@
 
 -(void)postRequestDataWithMethodName:(NSString*)methodName withParameters:(NSDictionary*)parameters token:(NSString*)token completionBlock:(void(^)(NSString *message, NSMutableDictionary * resDict, BOOL isSuccessfull))completionBlock ;
 
--(void)getRequestWithMethodName:(NSString*)methodName withParameters:(NSDictionary*)parameters completionBlock:(void(^)(NSString *message, NSMutableDictionary * resDict, BOOL isSuccessfull))completionBlock;
+-(void)getRequestWithMethodName:(NSString*)methodName withParameters:(NSDictionary*)parameters token:(NSString*)token completionBlock:(void(^)(NSString *message, NSMutableDictionary * resDict, BOOL isSuccessfull))completionBlock;
 
 @end
 

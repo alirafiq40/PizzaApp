@@ -15,5 +15,8 @@
 + (ACCartSingeltonManager *) sharedManager;
 
 -(void)setup;
+
 @property (nonatomic ,strong ) NSMutableDictionary * dictCartProducts;
+@property (nonatomic ,strong ) NSMutableArray * arrMenu;
+
 @end

@@ -47,7 +47,7 @@
     }];
 }
 
--(void)getRequestWithMethodName:(NSString*)methodName withParameters:(NSDictionary*)parameters completionBlock:(void(^)(NSString *message, NSMutableDictionary * resDict, BOOL isSuccessfull))completionBlock {
+-(void)getRequestWithMethodName:(NSString*)methodName withParameters:(NSDictionary*)parameters token:(NSString*)token completionBlock:(void(^)(NSString *message, NSMutableDictionary * resDict, BOOL isSuccessfull))completionBlock {
  
     [SVProgressHUD show];
     
@@ -56,10 +56,33 @@
     AFHTTPRequestOperationManager *manager =  [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:KBaseURL]];
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
     [manager setResponseSerializer:responseSerializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/json"];
+//    [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+//    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+
+    
+    
+//    [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"UTF-8"];
+    
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"UTF-8", @"text/html", @"application/json", nil];
+    
     [manager.requestSerializer setValue:KRestApiKey forHTTPHeaderField:@"Resapi-Key"];
 
-    [manager GET:methodName parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    if (token.length > 0) {
+        [manager.requestSerializer setValue:token forHTTPHeaderField:@"token"];
+    }
+    
+    [manager GET:methodName parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [SVProgressHUD dismiss];
         

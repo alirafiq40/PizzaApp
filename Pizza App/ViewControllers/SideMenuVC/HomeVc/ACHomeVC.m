@@ -9,7 +9,7 @@
 #import "ACHomeVC.h"
 #import "ACProductCollectionViewCell.h"
 //#import <SDWebImage/UIImageView+WebCache.h>
-//#import "ACProductDetailVC.h"
+#import "SubCategoriesVC.h"
 #import "AppDelegate.h"
 
 #define ITEMS_PER_PAGE 6
@@ -47,19 +47,19 @@
                                    initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = buttonItem;
 
+    [self getMenu];
     
 //    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
 //    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    
+    UISwipeGestureRecognizer* swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftFrom:)];
+    swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.collectionVW addGestureRecognizer:swipeUpGestureRecognizer];
 
-    
-//    ACAPIManager *manager = [ACAPIManager new];
-//    [manager allProductsList:^(NSString *message, NSMutableArray * resArr,BOOL isSuccessfull) {
-//        
-//        _arrResponce = resArr;
-//        [self.collectionVW reloadData];
-//        // NSLog(@"%@",resArr);
-//    }];
-    
+    UISwipeGestureRecognizer* rightSwipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightFrom:)];
+    rightSwipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.collectionVW addGestureRecognizer:rightSwipeUpGestureRecognizer];
+
 }
 
 //-(IBAction)btnSignInAction:(id)sender {
@@ -69,11 +69,9 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     
-       [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTranslucent:NO];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.barTintColor = KAppTheme_COLOR;
-
-    
     
 //    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     [self.navigationController.navigationBar setTitleTextAttributes:
@@ -91,6 +89,23 @@
 
 - (void) menuAction: (id) sender {
     [self.sideMenuViewController presentLeftMenuViewController];
+}
+
+- (void) getMenu {
+    
+    ACAPIManager * manager = [ACAPIManager new];
+    [manager getRequestWithMethodName:@"menu/restaurant_menu" withParameters:nil token:@"2e47683ff95f73d302963400f0eaacec2" completionBlock:^(NSString *message, NSMutableDictionary *resDic, BOOL isSuccessfull) {
+        
+        
+        if(isSuccessfull) {
+            ACCartSingeltonManager.sharedManager.arrMenu = [[resDic objectForKey:@"data"] valueForKey:@"menus"];
+            [self.collectionVW reloadData];
+        }
+        else {
+            [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
+        }
+        
+    }];
 }
 
 
@@ -132,20 +147,46 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)handleSwipeLeftFrom:(UIGestureRecognizer*)recognizer {
+    
+    NSInteger currentIndex = self.pageControl.currentPage;
+    int totalCellShowing = ((int)currentIndex +1)*6;
+    int moveToIndex = totalCellShowing+1;
+    
+    NSInteger categoryCount = ACCartSingeltonManager.sharedManager.arrMenu.count;
+    NSInteger extraItemsNeeded = ITEMS_PER_PAGE - (categoryCount % ITEMS_PER_PAGE);
+    NSInteger totalItems = categoryCount + extraItemsNeeded;
+    
+    if (moveToIndex > totalItems) {
+        return;
+    }
+    
+     [self.collectionVW scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:moveToIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+}
+
+- (void)handleSwipeRightFrom:(UIGestureRecognizer*)recognizer {
+    
+    NSInteger currentIndex = self.pageControl.currentPage;
+    int totalCellShowing = ((int)currentIndex +1)*6;
+    int moveToIndex = (totalCellShowing -12)+1;
+    
+    if (moveToIndex < 0) {
+        return;
+    }
+    
+    [self.collectionVW scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:moveToIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+}
+
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
     return 1;
 }
 
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    
-//    
-//    return 9; //_arrResponce.count;
-//}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    NSInteger categoryCount = 10;
+    NSInteger categoryCount = ACCartSingeltonManager.sharedManager.arrMenu.count;
     NSInteger extraItemsNeeded = ITEMS_PER_PAGE - (categoryCount % ITEMS_PER_PAGE);
     NSInteger totalItems = categoryCount + extraItemsNeeded;
     
@@ -167,11 +208,11 @@
     
     UICollectionViewCell *emptyCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EmptyCell" forIndexPath:indexPath];
 
-    if (indexPath.row < 10 ) {
+    if (indexPath.row < ACCartSingeltonManager.sharedManager.arrMenu.count ) {
 
-//    NSMutableDictionary * dict = [_arrResponce objectAtIndex:indexPath.row];
+    NSMutableDictionary * dict = [ACCartSingeltonManager.sharedManager.arrMenu objectAtIndex:indexPath.row];
 //    [cell.imgProduct sd_setImageWithURL:[NSURL URLWithString:[dict valueForKey:@"image1"]] placeholderImage:[UIImage imageNamed:@"sitting.png"]];
-    cell.titleProduct.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];//[dict valueForKey:@"name"];
+    cell.titleProduct.text = [[dict  objectForKey:@"categories"]valueForKey:@"name"];
     
     cell.contentView.layer.cornerRadius = 4.0f;
     cell.contentView.layer.borderWidth = 1.0f;
@@ -185,11 +226,11 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-//    NSDictionary * dict = [_arrResponce objectAtIndex:indexPath.row];
-//    
-//    ACProductDetailVC * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ACProductDetailVC"];
-//    vc.dictProduct = dict;
-//    [self.navigationController pushViewController:vc animated:YES];
+    NSMutableDictionary * dict = [ACCartSingeltonManager.sharedManager.arrMenu objectAtIndex:indexPath.row];
+
+    SubCategoriesVC * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SubCategoriesVC"];
+    vc.selectedCategory = dict;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

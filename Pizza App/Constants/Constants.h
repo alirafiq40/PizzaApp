@@ -61,7 +61,7 @@
 #define RAND_FROM_TO(min, max) (min + arc4random_uniform(max - min + 1))
 
 
-#define KBaseURL @"https://jayeat.com/api"
-#define KRestApiKey @"70279b0880bd50993bafc9dac8800bbd"
+#define KBaseURL @"https://jayeat.com/api/"
+#define KRestApiKey @"c228ed62ffcdc3a827c3d1d11f966eab"
 
 #endif /* Constants_h */
