@@ -26,6 +26,9 @@ NSString * const StripePublishableKey = @"pk_test_AUlBEXxUttg6rLFaoNkOckaL";//Te
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+    ACCartSingeltonManager.sharedManager.listCart = [NSMutableArray new];
+    
     [Stripe setDefaultPublishableKey:StripePublishableKey];
     
     [[FBSDKApplicationDelegate sharedInstance] application:application

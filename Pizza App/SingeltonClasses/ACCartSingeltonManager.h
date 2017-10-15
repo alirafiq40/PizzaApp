@@ -18,5 +18,6 @@
 
 @property (nonatomic ,strong ) NSMutableDictionary * dictCartProducts;
 @property (nonatomic ,strong ) NSMutableArray * arrMenu;
+@property (nonatomic ,strong ) NSMutableArray * listCart;
 
 @end

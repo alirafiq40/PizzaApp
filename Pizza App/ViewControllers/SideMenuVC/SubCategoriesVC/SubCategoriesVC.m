@@ -13,10 +13,11 @@
 @property (strong, nonatomic) NSMutableArray * arrSubCategories;
 @property (weak, nonatomic) IBOutlet UITableView * tblVW;
 @property (weak, nonatomic) IBOutlet  UIPickerView* picker;
+@property (weak, nonatomic) IBOutlet  UIView* parentView;
 
 
 @property (strong, nonatomic) NSMutableDictionary * selectedItem;
-@property (strong, nonatomic) NSMutableString * addOnItem;
+//@property (strong, nonatomic) NSMutableString * addOnItem;
 @property (strong, nonatomic) NSMutableArray * addOnList;
 
 @end
@@ -36,7 +37,9 @@
     self.picker.dataSource = self;
     self.picker.delegate = self;
     self.picker.showsSelectionIndicator=YES;
-
+//    self.picker.hidden = true;
+    self.parentView.hidden = true;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,6 +88,7 @@
     lblDetail.text = [currentItem valueForKey:@"description"];
     lblPrice.text = [currentItem valueForKey:@"price"];
 
+    [btnAdd addTarget:self action:@selector(btnAddAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -110,39 +114,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+
+-(IBAction)btnAddAction:(id)sender {
+    //    self.picker.hidden = false;
+//    self.parentView.hidden = false;
+    
+//    return;
+    
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:_tblVW];
+    NSIndexPath *indexPath = [_tblVW indexPathForRowAtPoint:buttonPosition];
+    NSLog(@"selected tableview row is %ld",(long)indexPath.row);
+
+    
     NSMutableDictionary * currentSubCategory = [_arrSubCategories objectAtIndex:indexPath.section];
     NSMutableArray * arrItems = [currentSubCategory objectForKey:@"items"];
-    NSMutableDictionary * currentItem = [arrItems objectAtIndex:indexPath.row];
-
-//    NSMutableDictionary * itemJson = [NSMutableDictionary new];
+    NSMutableDictionary * currentItem = [[arrItems objectAtIndex:indexPath.row] mutableCopy];
     
-//    itemJson[@"subCategoryID"] = currentSubCategory[@"id"];
-//    itemJson[@"subCategoryName"] = currentSubCategory[@"id"];
-//    itemJson[@"subCategoryDescription"] = currentSubCategory[@"description"];
-//    itemJson[@"subCategoryDays"] = currentSubCategory[@"days"];
-//    itemJson[@"subCategoryAllowCoupon"] = currentSubCategory[@"allow_coupon"];
-//    itemJson[@"subCategoryDelivery"] = currentSubCategory[@"delivery"];
-//    itemJson[@"subCategoryDelivery"] = currentSubCategory[@"delivery"];
     
     if ([[currentItem valueForKey:@"addon_item_id"] isEqualToString:@"0"]) {
-     
-        [currentItem setValue:@"" forKey:@"addOnItems"];
-        [ACCartSingeltonManager.sharedManager.arrMenu addObject:currentItem];
+    
+        currentItem[@"addOnItems"] = @"";
+        [ACCartSingeltonManager.sharedManager.listCart addObject:currentItem];
     }
     else {
-        
+        currentItem[@"addOnItems"] = @"";
         _selectedItem = currentItem;
-        _addOnItem = [@"" mutableCopy];
+//        _addOnItem = [@"" mutableCopy];
         [self fetchAddOnItem:[currentItem valueForKey:@"addon_item_id"]];
     }
-    
-//    ACCartSingeltonManager.sharedManager.dictCartProducts
 }
 
 - (void)fetchAddOnItem:(NSString*)addOnItemID {
     
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            @"addon_cat_id", addOnItemID,
+                            [NSNumber numberWithInteger:[addOnItemID intValue]], @"addon_cat_id",
                             nil];
 
     
@@ -154,15 +160,15 @@
         if(isSuccessfull) {
             
             _addOnList = [resDict objectForKey:@"items"];
-            [_picker becomeFirstResponder];
+            self.parentView.hidden = false;
+            [self.picker reloadAllComponents];
+        
         }
         else {
             [FPUtilityFunctions showAlertView:@"Error" message:message alertType:AlertFailure];
         }
-        
     }];
 }
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -178,8 +184,51 @@
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSDictionary * currentAddOn = (NSDictionary *)[_addOnList objectAtIndex:row];
-    
     return [currentAddOn valueForKey:@"name"];
+}
+
+#pragma mark- Button Actions
+
+-(IBAction)barButtonNextAction:(id)sender
+{
+    //    self.picker.hidden = true;
+    self.parentView.hidden = true;
+    
+    
+    NSInteger row = [self.picker selectedRowInComponent:0];
+    NSMutableDictionary * currentAddonItem = (NSMutableDictionary *)[_addOnList objectAtIndex:row];
+    NSMutableString * toppingName = [currentAddonItem valueForKey:@"name"];
+    NSMutableString * previousAddonItemName = _selectedItem[@"addOnItems"];
+
+    
+    if ([previousAddonItemName isEqualToString:@""]) {
+        
+        [_selectedItem setValue:toppingName forKey:@"addOnItems"];
+    }
+    else {
+        
+        [_selectedItem setValue:[NSString stringWithFormat:@"%@, %@",previousAddonItemName, toppingName] forKey:@"addOnItems"];
+    }
+//    _addOnItem = _selectedItem[@"addOnItems"];
+
+
+    if ([[currentAddonItem valueForKey:@"next_move_id"] isEqualToString:@"0"]) {
+        
+        // Finished
+        self.parentView.hidden = true;
+        [ACCartSingeltonManager.sharedManager.listCart addObject:_selectedItem];
+
+    }
+    else {
+        [self fetchAddOnItem:[currentAddonItem valueForKey:@"next_move_id"]];
+    }
+    
+}
+
+-(IBAction)barButtonCancelAction:(id)sender
+{
+    //    self.picker.hidden = true;
+    self.parentView.hidden = true;
 }
 
 

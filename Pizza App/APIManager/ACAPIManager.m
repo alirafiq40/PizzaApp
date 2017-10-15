@@ -19,11 +19,19 @@
     self.completionBlock = completionBlock;
     
     AFHTTPRequestOperationManager *manager =  [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:KBaseURL]];
+//    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+//    [manager setResponseSerializer:responseSerializer];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    
+    
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
     [manager setResponseSerializer:responseSerializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manager.requestSerializer setValue:KRestApiKey forHTTPHeaderField:@"Resapi-Key"];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
     
+    [manager.requestSerializer setValue:KRestApiKey forHTTPHeaderField:@"Resapi-Key"];
+
     if (token.length > 0) {
         [manager.requestSerializer setValue:token forHTTPHeaderField:@"token"];
     }
